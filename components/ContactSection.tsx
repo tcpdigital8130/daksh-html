@@ -15,19 +15,15 @@ import Link from "next/link";
 // import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 // import { Textarea } from "@/components/ui/textarea";
-
 const ContactSection = () => {
   return (
     <section
       id="contact"
       className="py-12 sm:py-24 bg-cream relative overflow-hidden sm:px-18"
     >
-      {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Get In Touch
@@ -39,9 +35,7 @@ const ContactSection = () => {
             For assessments, partnerships, or demos, reach out to us
           </p>
         </div>
-
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 sm:p-13 shadow-xl shadow-black/5 h-fit">
             <h3 className="text-xl sm:text-2xl font-bold text-black mb-6">
               Send us a message
@@ -115,7 +109,6 @@ const ContactSection = () => {
                 }}
                 isRequired
               />
-
               <Button
                 type="submit"
                 className="sm:col-span-2 w-full bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] text-white font-semibold py-6 hover:shadow-elevated transition-all duration-300"
@@ -124,11 +117,7 @@ const ContactSection = () => {
                 Send Message
               </Button>
             </form>
-          </div>
-
-          {/* Contact Info */}
           <div className="space-y-4 sm:space-y-8">
-            {/* Info Cards */}
             <div className="bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] rounded-2xl p-6 sm:p-8 text-primary-foreground">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
                 Contact Information
@@ -169,8 +158,6 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
-            {/* Social Links */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-black/5">
               <h3 className="text-xl font-bold text-black mb-4">Follow Us</h3>
               <div className="flex gap-4">
@@ -191,8 +178,6 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-
-            {/* Download App CTA */}
             <div className="bg-gradient-to-r from-[#F6C04A] to-[#F2B233] rounded-2xl p-6 sm:p-8">
               <h3 className="text-xl font-bold text-black mb-2">
                 Download the DAKSH App

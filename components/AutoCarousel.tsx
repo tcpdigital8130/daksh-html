@@ -5,97 +5,55 @@ import Image from "next/image";
 import { Button } from "@heroui/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CallFindMediaFiles } from "@/services/apiAction";
-
 type MediaItem = {
   id: string;
   url: string;
 };
-
 export default function AutoCarousel() {
   const [items, setItems] = useState<MediaItem[]>([]);
   const [current, setCurrent] = useState(0);
-
   const fetchData = async () => {
     try {
       const res = (await CallFindMediaFiles()) as any;
-
       const data = res?.data?.data || [];
-
-      const sliderData = data.find(
-        (item: any) => item.eventType === "Slider"
-      );
-
+      const sliderData = data.find((item: any) => item.eventType === "Slider");
       if (!sliderData) {
         setItems([]);
         return;
       }
-
-      const formatted = sliderData.images.map(
-        (img: string, index: number) => ({
-          id: `${index}`,
-          url: img.startsWith("http")
-            ? img
-            : `https://${img}`,
-        })
-      );
-
+      const formatted = sliderData.images.map((img: string, index: number) => ({
+        id: `${index}`,
+        url: img.startsWith("http") ? img : `https://${img}`,
+      }));
       setItems(formatted);
     } catch (err) {
-      console.error(
-        "Error fetching media:",
-        err
-      );
+      console.error("Error fetching media:", err);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
-
   useEffect(() => {
     if (!items.length) return;
-
     const interval = setInterval(() => {
-      setCurrent(
-        (prev) =>
-          (prev + 1) % items.length
-      );
+      setCurrent((prev) => (prev + 1) % items.length);
     }, 3000);
-
-    return () =>
-      clearInterval(interval);
+    return () => clearInterval(interval);
   }, [items]);
-
   const next = () => {
     if (!items.length) return;
 
-    setCurrent(
-      (prev) =>
-        (prev + 1) % items.length
-    );
+    setCurrent((prev) => (prev + 1) % items.length);
   };
-
   const prev = () => {
     if (!items.length) return;
 
-    setCurrent((prev) =>
-      prev === 0
-        ? items.length - 1
-        : prev - 1
-    );
+    setCurrent((prev) => (prev === 0 ? items.length - 1 : prev - 1));
   };
-
   const getVisibleSlides = () => {
     if (!items.length) return [];
-
-    const prevIndex =
-      current === 0
-        ? items.length - 1
-        : current - 1;
-
-    const nextIndex =
-      (current + 1) % items.length;
-
+    const prevIndex = current === 0 ? items.length - 1 : current - 1;
+    const nextIndex = (current + 1) % items.length;
     return [
       {
         ...items[prevIndex],
@@ -111,12 +69,8 @@ export default function AutoCarousel() {
       },
     ];
   };
-
   return (
     <div className="relative w-full overflow-hidden bg-[#0f1c1c] py-8 sm:py-10">
-
-      {/* Left Arrow */}
-
       <Button
         isIconOnly
         radius="full"
@@ -136,9 +90,6 @@ export default function AutoCarousel() {
       >
         <ChevronLeft size={22} />
       </Button>
-
-      {/* Slides */}
-
       <div
         className="
           flex
@@ -150,42 +101,32 @@ export default function AutoCarousel() {
           sm:px-16
         "
       >
-        {getVisibleSlides().map(
-          (item: any) => {
-            const isActive =
-              item.position === "active";
-
-            return (
-              <div
-                key={`${item.id}-${item.position}`}
-                className={`
+        {getVisibleSlides().map((item: any) => {
+          const isActive = item.position === "active";
+          return (
+            <div
+              key={`${item.id}-${item.position}`}
+              className={`
                   overflow-hidden
                   rounded-xl
                   transition-all
                   duration-500
                   flex-shrink-0
-
-                  ${
-                    item.position !==
-                    "active"
-                      ? "hidden md:block"
-                      : ""
-                  }
-
+                  ${item.position !== "active" ? "hidden md:block" : ""}
                   ${
                     isActive
                       ? "scale-100 md:scale-110 z-10"
                       : "scale-90 opacity-40"
                   }
                 `}
-              >
-                <Image
-                  src={item.url}
-                  alt="slider-image"
-                  width={400}
-                  height={250}
-                  unoptimized
-                  className="
+            >
+              <Image
+                src={item.url}
+                alt="slider-image"
+                width={400}
+                height={250}
+                unoptimized
+                className="
                     object-cover
                     rounded-xl
 
@@ -204,15 +145,11 @@ export default function AutoCarousel() {
                     xl:w-[320px]
                     xl:h-[200px]
                   "
-                />
-              </div>
-            );
-          }
-        )}
+              />
+            </div>
+          );
+        })}
       </div>
-
-      {/* Right Arrow */}
-
       <Button
         isIconOnly
         radius="full"
@@ -232,27 +169,17 @@ export default function AutoCarousel() {
       >
         <ChevronRight size={22} />
       </Button>
-
-      {/* Dots */}
-
       <div className="flex justify-center gap-2 mt-6">
         {items.map((_, i) => (
           <button
             key={i}
-            onClick={() =>
-              setCurrent(i)
-            }
+            onClick={() => setCurrent(i)}
             className={`
               h-2
               rounded-full
               transition-all
               duration-300
-
-              ${
-                i === current
-                  ? "w-6 bg-lime-400"
-                  : "w-2 bg-gray-400"
-              }
+              ${i === current ? "w-6 bg-lime-400" : "w-2 bg-gray-400"}
             `}
           />
         ))}

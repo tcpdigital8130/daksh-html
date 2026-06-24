@@ -1,5 +1,4 @@
 export type SiteConfig = typeof siteConfig;
-
 export const siteConfig = {
   name: "Daksh",
   description: "Discover Your True Potential",

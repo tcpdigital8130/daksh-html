@@ -1,7 +1,5 @@
 import * as React from "react";
-
 import { IconSvgProps } from "@/types";
-
 export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
   width,
@@ -23,7 +21,6 @@ export const Logo: React.FC<IconSvgProps> = ({
     />
   </svg>
 );
-
 export const DiscordIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
@@ -44,7 +41,6 @@ export const DiscordIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-
 export const TwitterIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
@@ -65,7 +61,6 @@ export const TwitterIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-
 export const GithubIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
@@ -88,7 +83,6 @@ export const GithubIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-
 export const MoonFilledIcon = ({
   size = 24,
   width,
@@ -110,7 +104,6 @@ export const MoonFilledIcon = ({
     />
   </svg>
 );
-
 export const SunFilledIcon = ({
   size = 24,
   width,
@@ -132,7 +125,6 @@ export const SunFilledIcon = ({
     </g>
   </svg>
 );
-
 export const HeartFilledIcon = ({
   size = 24,
   width,
@@ -157,7 +149,6 @@ export const HeartFilledIcon = ({
     />
   </svg>
 );
-
 export const SearchIcon = (props: IconSvgProps) => (
   <svg
     aria-hidden="true"

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
@@ -12,128 +11,93 @@ import {
 } from "@heroui/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CallFindMediaFiles } from "@/services/apiAction";
-
 type MediaItem = {
   src: string;
   type: "image" | "video";
 };
-
 type Section = {
   title: string;
   cover: string;
   key: string;
 };
-
 type ApiMediaType = {
   [key: string]: {
     photos: MediaItem[];
     videos: MediaItem[];
   };
 };
-
 export default function Gallery() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<"photos" | "videos">("photos");
   const [activeSection, setActiveSection] = useState<string | null>(null);
-
   const [apiMedia, setApiMedia] = useState<ApiMediaType>({});
   const [gallerySections, setGallerySections] = useState<Section[]>([]);
-
   const fetchMedia = async () => {
-  try {
-    const res = (await CallFindMediaFiles()) as any;
-    const files = res?.data?.data || [];
-
-    const excluded = ["test", "Slider", "Moments"];
-
-    const filteredFiles = files.filter(
-      (item: any) => !excluded.includes(item.eventType)
-    );
-
-    const formatted: ApiMediaType = {};
-    const sections: Section[] = [];
-
-    filteredFiles.forEach((item: any) => {
-      const key = item.eventType?.toLowerCase();
-
-      if (
-        (!item.images || item.images.length === 0) &&
-        (!item.videos || item.videos.length === 0)
-      ) {
-        return;
-      }
-
-      formatted[key] = {
-        photos: (item.images || []).map((url: string) => ({
-          src: url.startsWith("http")
-            ? url
-            : `https://${url}`,
-          type: "image",
-        })),
-
-        videos: (item.videos || []).map((url: string) => ({
-          src: url.startsWith("http")
-            ? url
-            : `https://${url}`,
-          type: "video",
-        })),
-      };
-
-      const cover =
-        item.images?.[0] ||
-        item.videos?.[0];
-
-      if (!cover) return;
-
-      sections.push({
-        title: item.eventType,
-        cover: cover.startsWith("http")
-          ? cover
-          : `https://${cover}`,
-        key,
+    try {
+      const res = (await CallFindMediaFiles()) as any;
+      const files = res?.data?.data || [];
+      const excluded = ["test", "Slider", "Moments"];
+      const filteredFiles = files.filter(
+        (item: any) => !excluded.includes(item.eventType),
+      );
+      const formatted: ApiMediaType = {};
+      const sections: Section[] = [];
+      filteredFiles.forEach((item: any) => {
+        const key = item.eventType?.toLowerCase();
+        if (
+          (!item.images || item.images.length === 0) &&
+          (!item.videos || item.videos.length === 0)
+        ) {
+          return;
+        }
+        formatted[key] = {
+          photos: (item.images || []).map((url: string) => ({
+            src: url.startsWith("http") ? url : `https://${url}`,
+            type: "image",
+          })),
+          videos: (item.videos || []).map((url: string) => ({
+            src: url.startsWith("http") ? url : `https://${url}`,
+            type: "video",
+          })),
+        };
+        const cover = item.images?.[0] || item.videos?.[0];
+        if (!cover) return;
+        sections.push({
+          title: item.eventType,
+          cover: cover.startsWith("http") ? cover : `https://${cover}`,
+          key,
+        });
       });
-    });
-
-    setApiMedia(formatted);
-    setGallerySections(sections);
-  } catch (err) {
-    console.error("Error fetching media:", err);
-  }
-};
-
+      setApiMedia(formatted);
+      setGallerySections(sections);
+    } catch (err) {
+      console.error("Error fetching media:", err);
+    }
+  };
   useEffect(() => {
     fetchMedia();
   }, []);
-
   const sectionData = activeSection ? apiMedia[activeSection] : null;
-
   const photos: MediaItem[] = sectionData?.photos || [];
   const videos: MediaItem[] = sectionData?.videos || [];
-
   const filteredItems = activeTab === "photos" ? photos : videos;
-
   const hasPhotos = photos.length > 0;
   const hasVideos = videos.length > 0;
-
   const openItem = (key: string) => {
     setActiveSection(key);
     setSelectedIndex(0);
     setActiveTab("photos");
     onOpen();
   };
-
   const nextItem = () => {
     setSelectedIndex((prev) => (prev + 1) % filteredItems.length);
   };
-
   const prevItem = () => {
     setSelectedIndex((prev) =>
       prev === 0 ? filteredItems.length - 1 : prev - 1,
     );
   };
-
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -143,7 +107,6 @@ export default function Gallery() {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen, filteredItems.length]);
-
   useEffect(() => {
     if (!activeSection) return;
 
@@ -155,7 +118,6 @@ export default function Gallery() {
       setActiveTab("photos");
     }
   }, [activeSection]);
-
   return (
     <div className="py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-10">
@@ -164,7 +126,6 @@ export default function Gallery() {
           Our <span className="text-yellow-500">Moments</span>
         </h2>
       </div>
-
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {gallerySections.map((item, i) => (
           <div
@@ -186,7 +147,6 @@ export default function Gallery() {
           </div>
         ))}
       </div>
-
       <Modal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
@@ -204,7 +164,6 @@ export default function Gallery() {
               >
                 <X />
               </Button>
-
               <div className="flex gap-3 mb-4">
                 <Button
                   isDisabled={!hasPhotos}
@@ -217,7 +176,6 @@ export default function Gallery() {
                 >
                   Photos ({photos.length})
                 </Button>
-
                 <Button
                   isDisabled={!hasVideos}
                   onPress={() => setActiveTab("videos")}
@@ -230,7 +188,6 @@ export default function Gallery() {
                   Videos ({videos.length})
                 </Button>
               </div>
-
               <div className="relative w-full flex justify-center">
                 {filteredItems.length > 1 && (
                   <>
@@ -241,7 +198,6 @@ export default function Gallery() {
                     >
                       <ChevronLeft />
                     </Button>
-
                     <Button
                       isIconOnly
                       className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/10"
@@ -251,7 +207,6 @@ export default function Gallery() {
                     </Button>
                   </>
                 )}
-
                 {filteredItems[selectedIndex]?.type === "image" ? (
                   <Image
                     src={filteredItems[selectedIndex]?.src}
@@ -270,7 +225,6 @@ export default function Gallery() {
                   />
                 )}
               </div>
-
               {filteredItems.length > 1 && (
                 <div className="flex gap-2 mt-4 overflow-x-auto">
                   {filteredItems.map((item, i) => (
