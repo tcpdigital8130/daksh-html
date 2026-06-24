@@ -1,7 +1,5 @@
 "use client";
-
 import { Accordion, AccordionItem, Button } from "@heroui/react";
-
 const faqs = [
   {
     question: "What is DAKSH?",
@@ -44,7 +42,6 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-12 sm:py-24 bg-gray-50 relative">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <span className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Got Questions?
@@ -56,8 +53,6 @@ const FAQSection = () => {
             Find answers to common questions about DAKSH
           </p>
         </div>
-
-        {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto">
           <Accordion variant="splitted">
             {faqs.map((faq, index) => (
@@ -67,8 +62,9 @@ const FAQSection = () => {
                 title={<span className="font-semibold">{faq?.question}</span>}
                 className="mb-2 text-sm text-slate-500 leading-relaxed"
                 classNames={{
-                  base: "bg-white",
+                  base: "bg-white shadow-sm",
                   title: "text-black",
+                  content: "py-4",
                 }}
               >
                 {faq?.answer}
@@ -76,8 +72,6 @@ const FAQSection = () => {
             ))}
           </Accordion>
         </div>
-
-        {/* Still Have Questions */}
         <div className="mt-16 text-center">
           <div className="inline-block bg-gray-100 rounded-2xl p-6 sm:p-8">
             <h3 className="text-xl font-bold text-black mb-2">

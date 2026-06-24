@@ -1,7 +1,6 @@
 import { Button } from "@heroui/button";
 import { Brain, Heart, TrendingUp, MessageCircle } from "lucide-react";
 import Link from "next/link";
-
 const benefitCategories = [
   {
     icon: Brain,
@@ -52,7 +51,6 @@ const benefitCategories = [
     ],
   },
 ];
-
 const BenefitsSection = () => {
   return (
     <section
@@ -60,7 +58,6 @@ const BenefitsSection = () => {
       className="py-12 sm:py-24 relative bg-gray-50 sm:px-18"
     >
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Why Choose DAKSH
@@ -72,15 +69,12 @@ const BenefitsSection = () => {
             Because your potential deserves data — not guesswork
           </p>
         </div>
-
-        {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {benefitCategories.map((category, index) => (
             <div
               key={index}
               className={`group ${category.bgColor} rounded-2xl p-6 sm:p-8 border border-gray-200 hover:shadow-elevated transition-all duration-300`}
             >
-              {/* Header */}
               <div className="flex items-center gap-4 mb-6">
                 <div
                   className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
@@ -91,8 +85,6 @@ const BenefitsSection = () => {
                   {category.title}
                 </h3>
               </div>
-
-              {/* Benefits List */}
               <ul className="space-y-2 sm:space-y-4">
                 {category.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -120,8 +112,6 @@ const BenefitsSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] text-primary-foreground rounded-2xl p-6 sm:p-8">
             <div className="text-left">

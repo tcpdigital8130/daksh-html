@@ -8,7 +8,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
-
+import Gallery from "./Gallery";
 const partners = [
   { name: "SPARK Collective", desc: "Led by Smt. Smriti Irani" },
   { name: "PM Shri Schools", desc: "National Education Initiative" },
@@ -17,27 +17,22 @@ const partners = [
   { name: "CII Indian Women Network", desc: "Industry Body" },
   { name: "AIIMS", desc: "Mental Health Festival" },
 ];
-
 const stats = [
   { icon: Users, value: "1,00,000+", label: "Individuals Assessed" },
   { icon: Target, value: "85%", label: "Profiling Accuracy" },
   { icon: Building, value: "100+", label: "Partner Organizations" },
   { icon: Award, value: "6+", label: "Years of Impact" },
 ];
-
 const ImpactSection = () => {
   return (
     <section
       id="impact"
       className="py-12 sm:py-24 bg-cream relative overflow-hidden sm:px-18"
     >
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
       </div>
-
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <span className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Our Reach
@@ -50,8 +45,6 @@ const ImpactSection = () => {
             development
           </p>
         </div>
-
-        {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-20">
           {stats.map((stat, index) => (
             <div
@@ -68,8 +61,7 @@ const ImpactSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Featured Partners */}
+        <Gallery />
         <div className="mb-20">
           <h3 className="text-xl sm:text-2xl font-bold text-black text-center mb-6 sm:mb-10">
             Featured & Recognized By
@@ -91,8 +83,6 @@ const ImpactSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Partnership Model */}
         <div className="bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] rounded-2xl p-8 md:p-12 text-primary-foreground">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>

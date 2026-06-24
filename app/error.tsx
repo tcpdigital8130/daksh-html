@@ -1,7 +1,5 @@
 "use client";
-
 import { useEffect } from "react";
-
 export default function Error({
   error,
   reset,
@@ -14,7 +12,6 @@ export default function Error({
     /* eslint-disable no-console */
     console.error(error);
   }, [error]);
-
   return (
     <div>
       <h2>Something went wrong!</h2>

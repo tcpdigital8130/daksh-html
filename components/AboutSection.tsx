@@ -6,7 +6,6 @@ import {
   Users,
   Sparkles,
 } from "lucide-react";
-
 const AboutSection = () => {
   const sciences = [
     {
@@ -40,20 +39,16 @@ const AboutSection = () => {
       desc: "Natural ability identification",
     },
   ];
-
   return (
     <section
       id="about"
       className="py-12 sm:py-24 bg-cream relative overflow-hidden sm:px-18"
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div>
-
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             About DAKSH
@@ -68,8 +63,6 @@ const AboutSection = () => {
             and cognitive strengths through scientifically validated methods.
           </p>
         </div>
-
-        {/* What is DAKSH */}
         <div className="bg-white shadow-xl shadow-black/5 rounded-2xl p-6 md:p-12 mb-16 max-w-4xl mx-auto">
           <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 sm:mb-4">
             What is DAKSH?
@@ -88,8 +81,6 @@ const AboutSection = () => {
             provides a 360-degree understanding of human potential.
           </p>
         </div>
-
-        {/* Science Behind */}
         <div className="mb-16">
           <h3 className="text-xl sm:text-2xl font-bold text-black text-center mb-4 sm:mb-10">
             The Science Behind DAKSH
@@ -111,8 +102,6 @@ const AboutSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
           <div className="bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] rounded-2xl p-6 sm:p-8 text-primary-foreground">
             <h3 className="text-2xl font-bold mb-2 sm:mb-4">Our Mission</h3>

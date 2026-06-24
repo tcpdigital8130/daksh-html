@@ -1,7 +1,6 @@
 import { Button } from "@heroui/button";
 import { Download, UserCheck, FileText, Video, Award } from "lucide-react";
 import Link from "next/link";
-
 const steps = [
   {
     icon: Download,
@@ -40,15 +39,13 @@ const steps = [
     color: "bg-gradient-to-br from-[#F2B24C] to-[#F08A4B]",
   },
 ];
-
 const HowItWorksSection = () => {
   return (
     <section
       id="how-it-works"
-      className="py-12 sm:py-24 relative sm:px-18 bg-gray-50"
+      className="py-12 sm:py-24 relative sm:px-18 bg-gray-50 scroll-mt-24"
     >
       <div className="container bg-[fbfaf9] mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Simple Process
@@ -60,36 +57,25 @@ const HowItWorksSection = () => {
             Your journey to self-discovery is just 5 simple steps away
           </p>
         </div>
-
-        {/* Steps */}
         <div className="relative">
-          {/* Connection Line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-coral -translate-y-1/2 rounded-full" />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 lg:gap-4">
             {steps.map((step, index) => (
               <div key={index} className="relative group">
-                {/* Step Card */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xl shadow-black/5 hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 text-center">
-                  {/* Step Number */}
+                <div className="bg-white h-65 rounded-2xl p-4 sm:p-6 shadow-xl shadow-black/5 hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 text-center">
                   <div
                     className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 shadow-glow group-hover:scale-110 transition-transform`}
                   >
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
-
-                  {/* Step Badge */}
                   <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-teal-700 mb-3">
                     Step {step.step}
                   </span>
-
                   <h3 className="font-bold text-black text-lg mb-2">
                     {step.title}
                   </h3>
                   <p className="text-gray-500 text-sm">{step.description}</p>
                 </div>
-
-                {/* Arrow (hidden on last item) */}
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
                     <div className="w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center">
@@ -113,8 +99,6 @@ const HowItWorksSection = () => {
             ))}
           </div>
         </div>
-
-        {/* CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-500 mb-4">
             Ready to discover your potential?

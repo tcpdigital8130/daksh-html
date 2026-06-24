@@ -2,18 +2,15 @@
 import { ArrowUp } from "lucide-react";
 import logo from "@/assets/logo_white.png";
 import Image from "next/image";
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   return (
     <footer className="bg-[#1b3232] text-background py-8 sm:py-16 relative sm:px-18">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1 -mt-5">
             <Image
               src={logo}
               height={150}
@@ -29,8 +26,6 @@ const Footer = () => {
               Because your potential deserves data — not guesswork.
             </p>
           </div>
-
-          {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-lg mb-4 text-gray-200">
               Quick Links
@@ -46,12 +41,10 @@ const Footer = () => {
                       {link}
                     </a>
                   </li>
-                )
+                ),
               )}
             </ul>
           </div>
-
-          {/* For You */}
           <div>
             <h4 className="font-semibold text-lg mb-4 text-gray-200">
               For You
@@ -75,8 +68,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Legal */}
           <div>
             <h4 className="font-semibold text-lg mb-4 text-gray-200">Legal</h4>
             <ul className="space-y-2">
@@ -98,8 +89,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar */}
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm text-center md:text-left">
             © {new Date().getFullYear()} DAKSH. All rights reserved.
@@ -116,5 +105,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

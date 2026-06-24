@@ -5,7 +5,6 @@ import {
   Building2,
   Wrench,
 } from "lucide-react";
-
 const audiences = [
   {
     icon: Briefcase,
@@ -64,20 +63,16 @@ const audiences = [
     color: "bg-gradient-to-r from-[#F2B24C] to-[#E7B64C]",
   },
 ];
-
 const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
       className="py-12 sm:py-24 bg-cream relative overflow-hidden sm:px-18"
     >
-      {/* Decorative Elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-warning/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto m-8 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto m-8 sm:mb-16">
           <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
             Who Can Benefit
           </span>
@@ -89,8 +84,6 @@ const WhoItsForSection = () => {
             their true potential
           </p>
         </div>
-
-        {/* Audience Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {audiences.map((audience, index) => (
             <div
@@ -99,25 +92,19 @@ const WhoItsForSection = () => {
                 index === 4 ? "lg:col-start-2" : ""
               }`}
             >
-              {/* Top Gradient Bar */}
               <div className={`h-2 ${audience.color}`} />
-
               <div className="p-6 sm:p-8">
-                {/* Icon */}
                 <div
                   className={`w-14 h-14 ${audience.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}
                 >
                   <audience.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-
                 <h3 className="text-xl font-bold text-black mb-3">
                   {audience.title}
                 </h3>
                 <p className="text-sm sm:text-md text-gray-500 mb-6">
                   {audience.description}
                 </p>
-
-                {/* Benefits */}
                 <div className="sm:space-y-2">
                   {audience.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm">
