@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@heroui/button";
 import { Input, Textarea } from "@heroui/input";
 import {
@@ -12,193 +13,252 @@ import {
   Instagram,
 } from "lucide-react";
 import Link from "next/link";
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import { Textarea } from "@/components/ui/textarea";
+
 const ContactSection = () => {
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "#",
+    },
+    {
+      icon: Twitter,
+      label: "Twitter",
+      href: "#",
+    },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      href: "#",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      href: "#",
+    },
+  ];
+
   return (
     <section
       id="contact"
-      className="py-12 sm:py-24 bg-cream relative overflow-hidden sm:px-18"
+      className="relative overflow-hidden bg-cream py-12 sm:px-8 sm:py-20 lg:px-12 xl:px-16"
     >
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-          <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wider mb-2 sm:mb-4 block">
+      <div className="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+
+      <div className="absolute bottom-0 right-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-secondary/5 blur-3xl" />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 lg:px-6">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+          <span className="mb-2 block text-sm font-semibold uppercase tracking-wider text-yellow-600 sm:mb-4">
             Get In Touch
           </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-4">
+
+          <h2 className="mb-2 text-2xl font-bold text-black md:text-4xl lg:mb-4 lg:text-5xl">
             Contact <span className="text-warning">Us</span>
           </h2>
+
           <p className="text-gray-500 sm:text-lg">
             For assessments, partnerships, or demos, reach out to us
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-2xl p-8 sm:p-13 shadow-xl shadow-black/5 h-fit">
-            <h3 className="text-xl sm:text-2xl font-bold text-black mb-6">
-              Send us a message
-            </h3>
-            <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <Input
-                type="text"
-                label="Name"
-                labelPlacement="outside"
-                variant="bordered"
-                placeholder="Your name"
-                classNames={{
-                  label: "font-large !text-black",
-                  inputWrapper: "border-gray-200",
-                }}
-                isRequired
-              />
-              <Input
-                type="number"
-                label="Phone"
-                labelPlacement="outside"
-                variant="bordered"
-                placeholder="+91 98765 43210"
-                onKeyPress={(e: any) => {
-                  if (!/^[0-9]$/.test(e.key)) {
-                    e.preventDefault();
-                  }
-                }}
-                classNames={{
-                  label: "font-medium !text-black",
-                  inputWrapper: "border-gray-200",
-                }}
-                isRequired
-              />
-              <Input
-                type="email"
-                label="Email"
-                labelPlacement="outside"
-                variant="bordered"
-                placeholder="your@email.com"
-                className="sm:col-span-2"
-                classNames={{
-                  label: "font-medium !text-black",
-                  inputWrapper: "border-gray-200",
-                }}
-                isRequired
-              />
-              <Input
-                type="text"
-                label="Subject"
-                labelPlacement="outside"
-                variant="bordered"
-                placeholder="How can we help?"
-                className="sm:col-span-2"
-                classNames={{
-                  label: "font-medium !text-black",
-                  inputWrapper: "border-gray-200",
-                }}
-                isRequired
-              />
-              <Textarea
-                label="Message"
-                labelPlacement="outside"
-                variant="bordered"
-                placeholder="Your message..."
-                rows={4}
-                className="sm:col-span-2"
-                classNames={{
-                  label: "font-medium !text-black",
-                  inputWrapper: "border-gray-200",
-                }}
-                isRequired
-              />
-              <Button
-                type="submit"
-                className="sm:col-span-2 w-full bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] text-white font-semibold py-6 hover:shadow-elevated transition-all duration-300"
-              >
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
-            </form>
-          <div className="space-y-4 sm:space-y-8">
-            <div className="bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] rounded-2xl p-6 sm:p-8 text-primary-foreground">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+
+        <div className="grid w-full grid-cols-1 items-stretch gap-6 md:gap-8 lg:grid-cols-2 lg:gap-9 xl:gap-10">
+          <div className="flex h-full w-full">
+            <div className="w-full rounded-2xl bg-white p-6 shadow-xl shadow-black/5 sm:p-8 lg:p-9">
+              <h3 className="mb-6 text-xl font-bold text-black sm:text-2xl">
+                Send us a message
+              </h3>
+
+              <form className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                <Input
+                  type="text"
+                  label="Name"
+                  labelPlacement="outside"
+                  variant="bordered"
+                  placeholder="Your name"
+                  classNames={{
+                    label: "font-medium !text-black",
+                    inputWrapper: "border-gray-200",
+                  }}
+                  isRequired
+                />
+
+                <Input
+                  type="tel"
+                  label="Phone"
+                  labelPlacement="outside"
+                  variant="bordered"
+                  placeholder="+91 98765 43210"
+                  onKeyDown={(e: any) => {
+                    if (
+                      !/^[0-9]$/.test(e.key) &&
+                      ![
+                        "Backspace",
+                        "Delete",
+                        "ArrowLeft",
+                        "ArrowRight",
+                        "Tab",
+                        "Home",
+                        "End",
+                      ].includes(e.key)
+                    ) {
+                      e.preventDefault();
+                    }
+                  }}
+                  classNames={{
+                    label: "font-medium !text-black",
+                    inputWrapper: "border-gray-200",
+                  }}
+                  isRequired
+                />
+
+                <Input
+                  type="email"
+                  label="Email"
+                  labelPlacement="outside"
+                  variant="bordered"
+                  placeholder="your@email.com"
+                  className="sm:col-span-2"
+                  classNames={{
+                    label: "font-medium !text-black",
+                    inputWrapper: "border-gray-200",
+                  }}
+                  isRequired
+                />
+
+                <Input
+                  type="text"
+                  label="Subject"
+                  labelPlacement="outside"
+                  variant="bordered"
+                  placeholder="How can we help?"
+                  className="sm:col-span-2"
+                  classNames={{
+                    label: "font-medium !text-black",
+                    inputWrapper: "border-gray-200",
+                  }}
+                  isRequired
+                />
+
+                <Textarea
+                  label="Message"
+                  labelPlacement="outside"
+                  variant="bordered"
+                  placeholder="Your message..."
+                  minRows={4}
+                  className="sm:col-span-2"
+                  classNames={{
+                    label: "font-medium !text-black",
+                    inputWrapper: "border-gray-200",
+                  }}
+                  isRequired
+                />
+
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] py-6 font-semibold text-white transition-all duration-300 hover:shadow-elevated sm:col-span-2"
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+          </div>
+
+          <div className="flex h-full w-full flex-col gap-6">
+            <div className="w-full rounded-2xl bg-gradient-to-r from-[#2C7F6F] to-[#3A9C8B] p-6 text-white sm:p-8">
+              <h3 className="mb-6 text-xl font-bold sm:text-2xl">
                 Contact Information
               </h3>
-              <div className="flex gap-8 space-y-4 sm:space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6" />
+
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 sm:h-12 sm:w-12">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-primary-foreground/80">
+
+                  <div className="min-w-0">
+                    <h4 className="mb-1 font-semibold">Email</h4>
+
+                    <p className="break-all text-sm text-white/80 sm:text-base">
                       info@daksh.co.in
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6" />
+
+                {/* Phone */}
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 sm:h-12 sm:w-12">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
+
                   <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-primary-foreground/80">
+                    <h4 className="mb-1 font-semibold">Phone</h4>
+
+                    <p className="text-sm text-white/80 sm:text-base">
                       +91 98765 43210
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6" />
+
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 sm:h-12 sm:w-12">
+                    <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
+
                   <div>
-                    <h4 className="font-semibold mb-1">Address</h4>
-                    <p className="text-primary-foreground/80">
+                    <h4 className="mb-1 font-semibold">Address</h4>
+
+                    <p className="text-sm text-white/80 sm:text-base">
                       New Delhi, India
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl shadow-black/5">
-              <h3 className="text-xl font-bold text-black mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                {[
-                  { icon: Linkedin, label: "LinkedIn" },
-                  { icon: Twitter, label: "Twitter" },
-                  { icon: Facebook, label: "Facebook" },
-                  { icon: Instagram, label: "Instagram" },
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="w-12 h-12 rounded-lg bg-gray-200 flex items-center justify-center hover:bg-teal-700 hover:text-primary-foreground transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
+
+            <div className="w-full rounded-2xl bg-white p-6 shadow-xl shadow-black/5 sm:p-8">
+              <h3 className="mb-5 text-xl font-bold text-black">Follow Us</h3>
+
+              <div className="flex items-center gap-3 sm:gap-4">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-200 text-gray-700 transition-all duration-300 hover:bg-teal-700 hover:text-white sm:h-12 sm:w-12"
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
-            <div className="bg-gradient-to-r from-[#F6C04A] to-[#F2B233] rounded-2xl p-6 sm:p-8">
-              <h3 className="text-xl font-bold text-black mb-2">
+
+            <div className="w-full rounded-2xl bg-gradient-to-r from-[#F6C04A] to-[#F2B233] p-6 sm:p-8">
+              <h3 className="mb-2 text-xl font-bold text-black">
                 Download the DAKSH App
               </h3>
-              <p className="mb-4 text-sm sm:text-md">
+
+              <p className="mb-5 text-sm text-black sm:text-base">
                 Start your journey to self-discovery today
               </p>
-              <div className="flex gap-4">
-                <Button
-                  size="lg"
-                  as={Link}
-                  href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
-                  target="_blank"
-                  className="bg-black text-white px-6 py-3 font-semibold hover:bg-foreground/90 transition-colors"
-                >
-                  Play Store
-                </Button>
-                {/* <button className="bg-foreground text-background px-6 py-3 rounded-lg font-semibold hover:bg-foreground/90 transition-colors">
-                  App Store
-                </button> */}
-              </div>
+
+              <Button
+                size="lg"
+                as={Link}
+                href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black px-6 py-3 font-semibold text-white transition-colors hover:bg-gray-800"
+              >
+                Play Store
+              </Button>
             </div>
           </div>
         </div>
