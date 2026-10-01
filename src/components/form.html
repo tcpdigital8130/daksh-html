@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DAKSH - Student Validation Form</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --blue: #1e3a8a;
+            --blue-dark: #172554;
+            --violet: #7c3aed;
+            --violet-light: #f5f3ff;
+            --border: #dbe4f0;
+            --text: #172554;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7ff;
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-bg {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at 90% 5%,
+                    rgba(124, 58, 237, 0.12),
+                    transparent 25%),
+                radial-gradient(circle at 5% 90%,
+                    rgba(30, 58, 138, 0.08),
+                    transparent 30%),
+                #f5f7ff;
+        }
+
+        .hero {
+            background:
+                radial-gradient(circle at 80% 20%,
+                    rgba(124, 58, 237, 0.15),
+                    transparent 30%),
+                linear-gradient(135deg,
+                    #1e3a8a,
+                    #4c1d95);
+        }
+
+        .form-card {
+            box-shadow:
+                0 25px 70px rgba(30, 58, 138, 0.14);
+        }
+
+        .field {
+            transition: 0.2s ease;
+        }
+
+        .field:focus {
+            outline: none;
+            border-color: var(--violet);
+            box-shadow:
+                0 0 0 3px rgba(124, 58, 237, 0.16);
+        }
+
+        .option {
+            border: 1.5px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            border-color: #93a4c7;
+            transform: translateY(-1px);
+        }
+
+        .option:has(input:checked) {
+            border-color: var(--violet);
+            background: var(--violet-light);
+            box-shadow:
+                0 8px 25px rgba(124, 58, 237, 0.10);
+        }
+
+        .icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eef2ff;
+            color: var(--blue);
+
+            flex-shrink: 0;
+        }
+
+        .violet {
+            color: var(--violet);
+        }
+
+        .section-title {
+            color: var(--blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-bg">
+
+        <!-- ============================= -->
+        <!-- TOP FORM HERO - NO NAVBAR -->
+        <!-- ============================= -->
+
+        <section class="hero text-white">
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 text-center">
+
+                <!-- Small Icon -->
+                <div class="mx-auto w-14 h-14 rounded-2xl
+                 bg-white/10
+                 border border-white/20
+                 flex items-center justify-center">
+                    <i data-lucide="fingerprint" class="w-8 h-8 violet"></i>
+                </div>
+
+                <!-- Title -->
+                <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl
+                 font-extrabold tracking-tight">
+                    Student Validation Form
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="mt-3 max-w-2xl mx-auto
+                 text-sm sm:text-base
+                 text-white/70">
+                    Verify your student identity, academic pathway
+                    and career aspirations.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- FORM -->
+        <!-- ============================= -->
+
+        <main class="max-w-5xl mx-auto
+             px-4 sm:px-6
+             -mt-5 pb-12
+             relative z-10">
+
+            <form id="studentForm" class="form-card bg-white
+               rounded-2xl
+               border border-[#dbe4f0]
+               overflow-hidden">
+
+                <!-- ================================= -->
+                <!-- STUDENT DETAILS -->
+                <!-- ================================= -->
+
+                <section class="p-5 sm:p-7
+                 border-b border-[#e2e8f0]">
+
+                    <!-- Section Header -->
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="icon-box">
+                            <i data-lucide="user-round" class="w-5 h-5"></i>
+                        </div>
+
+                        <div>
+                            <h2 class="font-extrabold text-lg section-title">
+                                Student Details
+                            </h2>
+
+                            <p class="text-xs text-slate-500">
+                                Basic contact information
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Fields -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+
+                        <!-- Full Name -->
+                        <label class="sm:col-span-2">
+
+                            <span class="block text-xs
+                       font-bold mb-1.5">
+                                Full Name
+                                <b class="text-red-500">*</b>
+                            </span>
+
+                            <div class="relative">
+
+                                <i data-lucide="user" class="absolute left-3
+                         top-1/2
+                         -translate-y-1/2
+                         w-4 h-4
+                         text-slate-400"></i>
+
+                                <input id="fullName" name="fullName" type="text" required placeholder="Enter full name"
+                                    class="field w-full h-11
+                         pl-10 pr-4
+                         rounded-xl
+                         border border-[#d5dff0]
+                         text-sm" />
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Mobile -->
+                        <label>
+
+                            <span class="block text-xs
+                       font-bold mb-1.5">
+                                Mobile Number
+                                <b class="text-red-500">*</b>
+                            </span>
+
+                            <div class="relative">
+
+                                <i data-lucide="phone" class="absolute left-3
+                         top-1/2
+                         -translate-y-1/2
+                         w-4 h-4
+                         text-slate-400"></i>
+
+                                <input id="mobileNumber" name="mobileNumber" type="tel" maxlength="10" required
+                                    placeholder="9876543210" class="field w-full h-11
+                         pl-10 pr-4
+                         rounded-xl
+                         border border-[#d5dff0]
+                         text-sm" />
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Email -->
+                        <label>
+
+                            <span class="block text-xs
+                       font-bold mb-1.5">
+                                Email Address
+                                <b class="text-red-500">*</b>
+                            </span>
+
+                            <div class="relative">
+
+                                <i data-lucide="mail" class="absolute left-3
+                         top-1/2
+                         -translate-y-1/2
+                         w-4 h-4
+                         text-slate-400"></i>
+
+                                <input id="emailAddress" name="emailAddress" type="email" required
+                                    placeholder="student@example.com" class="field w-full h-11
+                         pl-10 pr-4
+                         rounded-xl
+                         border border-[#d5dff0]
+                         text-sm" />
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================= -->
+                <!-- ACADEMIC STREAM -->
+                <!-- ================================= -->
+
+                <section class="p-5 sm:p-7
+                 border-b border-[#e2e8f0]">
+
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="icon-box">
+
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 class="font-extrabold
+                       text-lg
+                       section-title">
+                                Academic Stream
+                            </h2>
+
+                            <p class="text-xs text-slate-500">
+                                Select your academic stream
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Options -->
+                    <div class="grid
+                   sm:grid-cols-3
+                   gap-3">
+
+                        <!-- Science -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer">
+
+                            <input type="radio" name="academicStream" value="Science" class="sr-only" required />
+
+                            <div class="flex justify-between">
+
+                                <div class="icon-box
+                         w-9 h-9
+                         rounded-lg">
+
+                                    <i data-lucide="flask-conical" class="w-4 h-4"></i>
+
+                                </div>
+
+                                <i data-lucide="circle" class="w-4 h-4
+                         text-slate-300"></i>
+
+                            </div>
+
+                            <div class="mt-3
+                       font-bold
+                       text-sm">
+                                Science
+                            </div>
+
+                            <div class="text-[11px]
+                       text-slate-500
+                       mt-1">
+                                Technology, Maths & Research
+                            </div>
+
+                        </label>
+
+
+                        <!-- Commerce -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer">
+
+                            <input type="radio" name="academicStream" value="Commerce" class="sr-only" />
+
+                            <div class="flex justify-between">
+
+                                <div class="icon-box
+                         w-9 h-9
+                         rounded-lg">
+
+                                    <i data-lucide="chart-no-axes-combined" class="w-4 h-4"></i>
+
+                                </div>
+
+                                <i data-lucide="circle" class="w-4 h-4
+                         text-slate-300"></i>
+
+                            </div>
+
+                            <div class="mt-3
+                       font-bold
+                       text-sm">
+                                Commerce
+                            </div>
+
+                            <div class="text-[11px]
+                       text-slate-500
+                       mt-1">
+                                Finance, Business & Economics
+                            </div>
+
+                        </label>
+
+
+                        <!-- Humanities -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer">
+
+                            <input type="radio" name="academicStream" value="Humanities / Arts" class="sr-only" />
+
+                            <div class="flex justify-between">
+
+                                <div class="icon-box
+                         w-9 h-9
+                         rounded-lg">
+
+                                    <i data-lucide="palette" class="w-4 h-4"></i>
+
+                                </div>
+
+                                <i data-lucide="circle" class="w-4 h-4
+                         text-slate-300"></i>
+
+                            </div>
+
+                            <div class="mt-3
+                       font-bold
+                       text-sm">
+                                Humanities / Arts
+                            </div>
+
+                            <div class="text-[11px]
+                       text-slate-500
+                       mt-1">
+                                People, Culture & Creativity
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================= -->
+                <!-- CAREER ASPIRATIONS -->
+                <!-- ================================= -->
+
+                <section class="p-5 sm:p-7">
+
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="icon-box">
+
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 class="font-extrabold
+                       text-lg
+                       section-title">
+                                Career Aspirations
+                            </h2>
+
+                            <p class="text-xs text-slate-500">
+                                Choose all areas that interest you
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Career Options -->
+                    <div class="grid
+                   sm:grid-cols-2
+                   gap-3">
+
+                        <!-- Science -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory" value="Science, Health & Technology"
+                                class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="microscope" class="w-4 h-4 violet"></i>
+
+                                    Science, Health & Technology
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Medical, Engineering, IT, Research
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Business -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory" value="Business, Money & Entrepreneurship"
+                                class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="briefcase-business" class="w-4 h-4 violet"></i>
+
+                                    Business & Entrepreneurship
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Finance, Banking, Business
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Government -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory" value="Government, Law & Public Service"
+                                class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="landmark" class="w-4 h-4 violet"></i>
+
+                                    Government, Law & Public Service
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Civil Services, Law, Defence
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Education -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory" value="Education, People & Social Impact"
+                                class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="users-round" class="w-4 h-4 violet"></i>
+
+                                    Education & Social Impact
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Teaching, Psychology, Social Work
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Creative -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory" value="Creative, Media & Design"
+                                class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="pen-tool" class="w-4 h-4 violet"></i>
+
+                                    Creative, Media & Design
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Design, Media, Arts, Entertainment
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- Nature -->
+                        <label class="option
+                     rounded-xl
+                     p-4
+                     cursor-pointer
+                     flex gap-3">
+
+                            <input type="checkbox" name="careerCategory"
+                                value="Nature, Sports, Travel & Skilled Careers" class="mt-1 accent-[#1e3a8a]" />
+
+                            <div>
+
+                                <div class="flex
+                         items-center
+                         gap-2
+                         font-bold
+                         text-sm">
+
+                                    <i data-lucide="mountain" class="w-4 h-4 violet"></i>
+
+                                    Nature, Sports & Skilled Careers
+
+                                </div>
+
+                                <p class="text-[11px]
+                         text-slate-500
+                         mt-1">
+                                    Sports, Tourism, Agriculture, Skilled Trades
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Other -->
+                    <label class="block mt-4">
+
+                        <span class="block
+                     text-xs
+                     font-bold
+                     mb-1.5">
+                            Any other
+                        </span>
+
+                        <div class="relative">
+
+                            <i data-lucide="plus-circle" class="absolute
+                       left-3
+                       top-1/2
+                       -translate-y-1/2
+                       w-4 h-4
+                       text-slate-400"></i>
+
+                            <input id="otherCategoryDetail" name="otherCategoryDetail" type="text"
+                                placeholder="Specify another career or field" class="field
+                       w-full
+                       h-11
+                       pl-10
+                       pr-4
+                       rounded-xl
+                       border border-[#d5dff0]
+                       text-sm" />
+
+                        </div>
+
+                    </label>
+
+                </section>
+
+
+                <!-- ================================= -->
+                <!-- FOOTER ACTIONS -->
+                <!-- ================================= -->
+
+                <footer class="px-5 sm:px-7
+                 py-5
+                 bg-[#f5f7ff]
+                 border-t border-[#e2e8f0]
+                 flex justify-end
+                 gap-3">
+
+                    <!-- Clear -->
+                    <button type="reset" title="Clear Form" class="h-11 w-11
+                   rounded-xl
+                   border border-[#cbd5e1]
+                   text-[#1e3a8a]
+                   flex items-center
+                   justify-center
+                   hover:bg-white">
+
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+
+                    </button>
+
+
+                    <!-- Continue -->
+                    <button type="submit" class="h-11
+                   px-6
+                   rounded-xl
+                   bg-[var(--violet)]
+                   text-white
+                   font-extrabold
+                   text-sm
+                   flex items-center
+                   justify-center
+                   gap-2
+                   hover:brightness-110">
+
+                        <span>Submit Validation</span>
+
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script>
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+
+        // Form Submit
+        document
+            .getElementById("studentForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const form = event.target;
+
+                if (!form.checkValidity()) {
+
+                    form.reportValidity();
+
+                    return;
+
+                }
+
+                alert("Student form submitted successfully.");
+
+            });
+
+    </script>
+
+</body>
+
+</html>

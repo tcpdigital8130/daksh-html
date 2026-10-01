@@ -1,0 +1,6 @@
+{
+  "name": "DAKSH — Scientific Assessment & Potential Diagnostic Platform",
+  "description": "Redesigned cognitive and scientific assessment platform integrating Dermatoglyphics (DMIT), psychometric analytics, and aptitude testing to decode innate human potential.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
