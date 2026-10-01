@@ -293,13 +293,13 @@ export const GallerySection: React.FC = () => {
 
                   {/* Single Upload Button on Card */}
                   <div className="absolute top-2 right-2 z-20">
-                    <button
+                    {/* <button
                       onClick={(e) => handleSingleCardUpload(item, e)}
                       title="Update photo"
                       className="p-1 rounded-md bg-black/40 hover:bg-[#161248] text-white/90 hover:text-white backdrop-blur-xs border border-white/15 transition-colors cursor-pointer"
                     >
                       <Camera className="w-3 h-3" />
-                    </button>
+                    </button> */}
                   </div>
 
                   {/* Expand icon on hover */}
@@ -354,7 +354,7 @@ export const GallerySection: React.FC = () => {
                 <span className="text-slate-500">{selectedItem.date}</span>
               </div>
               
-              <div className="flex items-center gap-1.5">
+              {/* <div className="flex items-center gap-1.5">
                 <button
                   onClick={(e) => handleSingleCardUpload(selectedItem, e)}
                   className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
@@ -383,7 +383,7 @@ export const GallerySection: React.FC = () => {
                 >
                   <X className="w-4 h-4" />
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Modal Content */}
