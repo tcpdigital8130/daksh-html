@@ -14,7 +14,7 @@ export const AudienceSegments: React.FC<AudienceSegmentsProps> = ({
 
   const segments = {
     students: {
-      title: 'Students (Grades 8–12 & College)',
+      title: 'Students (Grades 8-12 & College)',
       icon: GraduationCap,
       lead: 'End academic confusion with empirical cognitive alignment.',
       description: 'Over 68% of Indian students choose their academic streams due to parental or peer pressure. DAKSH maps your authentic cognitive wiring so you choose with absolute clarity.',
