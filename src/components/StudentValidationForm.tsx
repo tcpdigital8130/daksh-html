@@ -91,37 +91,37 @@ const careerOptions = [
   {
     value: "Science, Health & Technology",
     title: "Science, Health & Technology",
-    description: "Medical, Engineering, IT, Research",
+    description: "Medical, Engineering, IT, Computer Science, Research, Biotechnology",
     icon: Microscope,
   },
   {
     value: "Business, Money & Entrepreneurship",
-    title: "Business & Entrepreneurship",
-    description: "Finance, Banking, Business",
+    title: "Business, Money & Entrepreneurship",
+    description: "Business, Finance, Banking, Commerce, Entrepreneurship",
     icon: BriefcaseBusiness,
   },
   {
     value: "Government, Law & Public Service",
     title: "Government, Law & Public Service",
-    description: "Civil Services, Law, Defence",
+    description: "Civil Services, Law, Defence, Police, Administration",
     icon: Landmark,
   },
   {
     value: "Education, People & Social Impact",
-    title: "Education & Social Impact",
-    description: "Teaching, Psychology, Social Work",
+    title: "Education, People & Social Impact",
+    description: "Teaching, Psychology, Counselling, Social Work, Development",
     icon: UsersRound,
   },
   {
     value: "Creative, Media & Design",
     title: "Creative, Media & Design",
-    description: "Design, Media, Arts, Entertainment",
+    description: "Creative, Media & Design	Architecture, Fashion, Design, Media, Journalism, Arts, Entertainment",
     icon: PenTool,
   },
   {
     value: "Nature, Sports, Travel & Skilled Careers",
     title: "Nature, Sports & Skilled Careers",
-    description: "Sports, Tourism, Agriculture, Skilled Trades",
+    description: "Agriculture, Environment, Sports, Fitness, Hospitality, Tourism, Skilled Trades",
     icon: Mountain,
   },
 ];
@@ -600,11 +600,15 @@ export default function StudentValidationForm() {
 
               <div>
                 <h2 className="text-lg font-extrabold text-blue-950">
-                  Academic Stream
+                  Academic Stream of Interest
                 </h2>
 
                 <p className="mt-1 text-xs text-slate-500">
-                  Select your academic stream
+                  Which stream were you most interested in? 
+                </p>
+                    <p className="mt-1 text-xs text-slate-500">
+              Select one.
+ 
                 </p>
               </div>
             </div>
@@ -677,7 +681,7 @@ export default function StudentValidationForm() {
                 </h2>
 
                 <p className="mt-1 text-xs text-slate-500">
-                  Choose all areas that interest you
+                  What was your dream job or career?
                 </p>
               </div>
             </div>
@@ -727,7 +731,7 @@ export default function StudentValidationForm() {
 
             <label className="mt-4 block">
               <span className="mb-1.5 block text-xs font-bold text-blue-950">
-                Any other
+                Any other, Please specify!  
               </span>
 
               <div className="relative">
