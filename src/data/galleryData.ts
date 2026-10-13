@@ -13,24 +13,20 @@ export interface GalleryItem {
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: "smriti-irani-stage",
-    filename: "D1.png",
-    imageSrc: "/gallery/D1.png",
-    title: "National Summit Keynote with Smt. Smriti Irani",
-    category: "dignitaries",
-    categoryLabel: "National Dignitaries",
-    date: "National Leadership Summit",
-    location: "New Delhi",
-    caption:
-      "National General Secretary, Bharatiya Janata Party Smt. Smriti Irani addressing the national gathering alongside DAKSH and SPARK Collective leadership, supported by the Bill & Melinda Gates Foundation and CII Centre for Women Leadership.",
-    highlights: [
-      "Smt. Smriti Irani Keynote",
-      "Gates Foundation Partnership",
-      "CII Centre for Women Leadership",
-    ],
-    aspectRatio: "wide",
-  },
+  // {
+  //   id: "smriti-irani-stage",
+  //   filename: "D1.png",
+  //   imageSrc: "/gallery/D1.png",
+  //   title: "Keynote with Smt. Smriti Irani",
+  //   category: "dignitaries",
+  //   categoryLabel: "National Dignitaries",
+  //   date: "National Leadership Summit",
+  //   location: "New Delhi",
+  //   caption:
+  //     "National General Secretary, Bharatiya Janata Party Smt. Smriti Irani addressing the national gathering alongside DAKSH and SPARK Collective leadership, supported by the Centre for Women Leadership.",
+  //   highlights: ["Smt. Smriti Irani Keynote", "Centre for Women Leadership"],
+  //   aspectRatio: "wide",
+  // },
   {
     id: "live-ridge-scan-counter",
     filename: "D2.png",
@@ -41,11 +37,11 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     date: "Rise & Roar Expo",
     location: "Main Convention Atrium",
     caption:
-      'DAKSH biometric certified specialist capturing high-resolution epidermal ridge patterns using the guided mobile phone camera torch during the "Shakti ki Disha" national drive.',
+      "Trained DAKSH assessors use a guided mobile-based process to capture fingerprint images as part of the “Shakti Ki Disha” national drive.",
     highlights: [
-      "Mobile Torch Macro Scan",
-      "Instant Ridge Extraction",
-      "Zero Ink Biometrics",
+      // "Mobile Torch Macro Scan",
+      // "Instant Ridge Extraction",
+      // "Zero Ink Biometrics",
     ],
     aspectRatio: "portrait",
   },
@@ -147,7 +143,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: "team",
     categoryLabel: "DAKSH Field Team",
     date: "Operational Deployment",
-    location: "National Summit Grounds",
+    location: "Spark Collective Camp",
     caption:
       "A trained team of assessment professionals and field coordinators, united by the DAKSH identity and committed to delivering a seamless assessment experience.",
     highlights: [
@@ -158,21 +154,17 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     aspectRatio: "wide",
   },
   {
-    id: "cii-women-network",
+    id: "women-network",
     filename: "D9.jpeg",
     imageSrc: "/gallery/D9.jpeg",
-    title: "CII Indian Women Network (IWN) Chapter",
+    title: "Indian Women Network (IWN) Chapter",
     category: "partnerships",
     categoryLabel: "Institutional Governance",
-    date: "CII Conclave",
-    location: "CII Regional Centre",
+    date: "Conclave",
+    location: "Regional Centre",
     caption:
-      "DAKSH leadership and representatives collaborating with the Confederation of Indian Industry (CII) Indian Women Network for corporate potential mapping.",
-    highlights: [
-      "CII Partnership",
-      "Corporate Talent Mapping",
-      "Women In Leadership",
-    ],
+      "DAKSH leadership and representatives collaborating with the Indian Women Network for corporate potential mapping.",
+    highlights: ["Corporate Talent Mapping", "Women In Leadership"],
     aspectRatio: "portrait",
   },
   {
@@ -203,7 +195,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     date: "STEM Career Expo",
     location: "Tech Exhibition Hall",
     caption:
-      "Engineering and high school candidates reviewing their multi-lobe neocortex distribution and VAK learning profiles directly with DAKSH technical assessors.",
+      "Engineering and high school candidates reviewing their learning profiles directly with DAKSH technical assessors.",
     highlights: [
       "Youth Career Alignment",
       "Real-Time Screen Synthesis",

@@ -1232,7 +1232,7 @@ export const INSTITUTIONAL_PARTNERS = [
     impact: "1,800+ Technical Specialists Assessed",
   },
   {
-    name: "CII Indian Women Network",
+    name: "Indian Women Network",
     category: "Leadership & Industry Body",
     type: "National Industry Federation",
     impact: "4,500+ Women Leaders & Entrepreneurs",

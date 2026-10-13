@@ -172,7 +172,6 @@ export const Hero: React.FC<HeroProps> = () => {
                   <span>British Council (MOU)</span>
                 </span>
                 <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center gap-1.5">
-                  <span>Bill & Melinda Gates Foundation</span>
                 </span>
                 <span className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center gap-1.5">
                   <span>The SPARK Collective</span>
@@ -226,7 +225,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   </div> */}
 
                   <h3 className="text-sm sm:text-base font-extrabold text-white leading-snug">
-                    SPARK Collective Partner Boot Camp
+                    DAKSH at The Spark Collective Camp
                   </h3>
 
                   <p className="text-[11px] sm:text-xs text-slate-300 font-normal line-clamp-1">
