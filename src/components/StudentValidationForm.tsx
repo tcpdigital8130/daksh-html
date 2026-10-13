@@ -91,7 +91,8 @@ const careerOptions = [
   {
     value: "Science, Health & Technology",
     title: "Science, Health & Technology",
-    description: "Medical, Engineering, IT, Computer Science, Research, Biotechnology",
+    description:
+      "Medical, Engineering, IT, Computer Science, Research, Biotechnology",
     icon: Microscope,
   },
   {
@@ -115,13 +116,15 @@ const careerOptions = [
   {
     value: "Creative, Media & Design",
     title: "Creative, Media & Design",
-    description: "Creative, Media & Design	Architecture, Fashion, Design, Media, Journalism, Arts, Entertainment",
+    description:
+      "Creative, Media & Design	Architecture, Fashion, Design, Media, Journalism, Arts, Entertainment",
     icon: PenTool,
   },
   {
     value: "Nature, Sports, Travel & Skilled Careers",
     title: "Nature, Sports & Skilled Careers",
-    description: "Agriculture, Environment, Sports, Fitness, Hospitality, Tourism, Skilled Trades",
+    description:
+      "Agriculture, Environment, Sports, Fitness, Hospitality, Tourism, Skilled Trades",
     icon: Mountain,
   },
 ];
@@ -552,7 +555,7 @@ export default function StudentValidationForm() {
                     required
                     value={formData.mobileNumber}
                     onChange={handleMobileChange}
-                    placeholder="9876543210"
+                    placeholder="Enter 10-digit mobile number"
                     disabled={isSubmitting}
                     className="h-11 w-full rounded-xl border border-[#d5dff0] bg-white pl-10 pr-4 text-sm text-blue-950 outline-none transition placeholder:text-slate-400 focus:border-violet-600 focus:ring-4 focus:ring-violet-100 disabled:cursor-not-allowed disabled:bg-slate-50"
                   />
@@ -579,7 +582,7 @@ export default function StudentValidationForm() {
                     required
                     value={formData.emailAddress}
                     onChange={handleInputChange}
-                    placeholder="student@example.com"
+                    placeholder="Enter email address"
                     disabled={isSubmitting}
                     className="h-11 w-full rounded-xl border border-[#d5dff0] bg-white pl-10 pr-4 text-sm text-blue-950 outline-none transition placeholder:text-slate-400 focus:border-violet-600 focus:ring-4 focus:ring-violet-100 disabled:cursor-not-allowed disabled:bg-slate-50"
                   />
@@ -604,12 +607,9 @@ export default function StudentValidationForm() {
                 </h2>
 
                 <p className="mt-1 text-xs text-slate-500">
-                  Which stream were you most interested in? 
+                  Which stream were you most interested in?
                 </p>
-                    <p className="mt-1 text-xs text-slate-500">
-              Select one.
- 
-                </p>
+                <p className="mt-1 text-xs text-slate-500">Select one.</p>
               </div>
             </div>
 
@@ -731,7 +731,7 @@ export default function StudentValidationForm() {
 
             <label className="mt-4 block">
               <span className="mb-1.5 block text-xs font-bold text-blue-950">
-                Any other, Please specify!  
+                Any other, Please specify!
               </span>
 
               <div className="relative">
@@ -793,7 +793,7 @@ export default function StudentValidationForm() {
               FOOTER
           ================================================= */}
 
-          <footer className="mt-5 flex items-center justify-end gap-3 border-t border-slate-200 bg-[#F5F7FF] p-4 sm:px-7 sm:py-5">
+          <footer className=" flex items-center justify-end gap-3 bg-[#F5F7FF] sm:px-7 sm:py-5">
             {/* RESET */}
 
             <button
