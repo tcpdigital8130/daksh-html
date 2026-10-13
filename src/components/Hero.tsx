@@ -220,16 +220,18 @@ export const Hero: React.FC<HeroProps> = () => {
 
                 {/* Bottom Caption Overlay */}
                 <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 space-y-1 text-white">
-                  <div className="flex items-center gap-1.5 text-[11px] font-bold text-amber-300">
+                  {/* <div className="flex items-center gap-1.5 text-[11px] font-bold text-amber-300">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     <span>Keynote Address by Smt. Smriti Irani</span>
-                  </div>
+                  </div> */}
+
                   <h3 className="text-sm sm:text-base font-extrabold text-white leading-snug">
-                    DAKSH & The SPARK Collective National Summit
+                    SPARK Collective Partner Boot Camp
                   </h3>
+
                   <p className="text-[11px] sm:text-xs text-slate-300 font-normal line-clamp-1">
-                    Powering leading public and educational institutions with
-                    Gates Foundation & CII.
+                    Spark Collective and Daksh inspiring women to discover their
+                    inner potential and lead with confidence.
                   </p>
                 </div>
               </div>
