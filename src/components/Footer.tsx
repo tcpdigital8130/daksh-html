@@ -41,8 +41,6 @@ export const Footer: React.FC = () => {
   const partnerList = [
     "The SPARK Collective · Rise & Roar",
     "British Council · MOU Signatory",
-    "Confederation of Indian Industry (CII)",
-    "Bill & Melinda Gates Foundation",
     "Alliance for Global Good Gender Equity",
   ];
 
