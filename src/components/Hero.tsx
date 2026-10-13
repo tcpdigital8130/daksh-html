@@ -1,19 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Camera, MessageSquareHeart, CheckCircle2, Upload } from 'lucide-react';
-import { getImageFromStore, saveImageToStore } from '../utils/imageStore';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  ArrowRight,
+  Camera,
+  MessageSquareHeart,
+  CheckCircle2,
+  Upload,
+  ChevronRight,
+  Film,
+} from "lucide-react";
+import { getImageFromStore, saveImageToStore } from "../utils/imageStore";
 
 interface HeroProps {
   onExploreReport?: () => void;
 }
 
-const HERO_IMAGE_FILENAME = 'WhatsApp Image 2026-10-01 at 12.05.58.jpeg';
+const HERO_IMAGE_FILENAME = "WhatsApp Image 2026-10-01 at 12.05.58.jpeg";
 
 export const Hero: React.FC<HeroProps> = () => {
-  const [heroImageSrc, setHeroImageSrc] = useState<string>('/gallery/D1.png');
+  const [heroImageSrc, setHeroImageSrc] = useState<string>("/gallery/D1.png");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check if user uploaded this image into IndexedDB           
+    // Check if user uploaded this image into IndexedDB
     getImageFromStore(HERO_IMAGE_FILENAME).then((stored) => {
       if (stored) {
         setHeroImageSrc(stored);
@@ -22,19 +30,25 @@ export const Hero: React.FC<HeroProps> = () => {
 
     const handleUpdate = (e: Event) => {
       const customEvent = e as CustomEvent<{ filename: string }>;
-      if (customEvent.detail?.filename === HERO_IMAGE_FILENAME || customEvent.detail?.filename === 'all') {
+      if (
+        customEvent.detail?.filename === HERO_IMAGE_FILENAME ||
+        customEvent.detail?.filename === "all"
+      ) {
         getImageFromStore(HERO_IMAGE_FILENAME).then((stored) => {
           if (stored) setHeroImageSrc(stored);
-          else setHeroImageSrc('/gallery/D1.png');
+          else setHeroImageSrc("/gallery/D1.png");
         });
       }
     };
 
-    window.addEventListener('daksh_image_updated', handleUpdate);
-    return () => window.removeEventListener('daksh_image_updated', handleUpdate);
+    window.addEventListener("daksh_image_updated", handleUpdate);
+    return () =>
+      window.removeEventListener("daksh_image_updated", handleUpdate);
   }, []);
 
-  const handleHeroImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleHeroImageUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -45,12 +59,11 @@ export const Hero: React.FC<HeroProps> = () => {
       await saveImageToStore(HERO_IMAGE_FILENAME, dataUrl);
     };
     reader.readAsDataURL(file);
-    if (fileInputRef.current) fileInputRef.current.value = '';
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   return (
     <section className="relative overflow-hidden pt-8 pb-14 md:pt-14 md:pb-20 bg-[#F4F7FB]">
-      
       {/* Subtle Ambient Background Gradients */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
@@ -66,18 +79,19 @@ export const Hero: React.FC<HeroProps> = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
           {/* Left Column: Bold, Punchy, Minimal Text */}
           <div className="lg:col-span-6 space-y-5">
-            
             {/* National Initiative Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-              <span className="text-xs font-bold text-slate-900">National Initiative</span>
+              <span className="text-xs font-bold text-slate-900">
+                National Initiative
+              </span>
               <span className="text-slate-300">·</span>
-              <span className="text-xs font-bold text-[#4338CA]">शक्ति की दिशा (Shakti ki Disha)</span>
+              <span className="text-xs font-bold text-[#4338CA]">
+                शक्ति की दिशा (Shakti ki Disha)
+              </span>
             </div>
-
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15] [text-wrap:balance]">
               Decode Innate Potential. <br className="hidden sm:block" />
@@ -85,12 +99,12 @@ export const Hero: React.FC<HeroProps> = () => {
                 Powered by Touch.
               </span>
             </h1>
-
             {/* Punchy 1-Sentence Subtitle */}
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
-              India’s first smartphone-guided biometric ridge diagnostic and cognitive analytics engine. Guiding students, families, and institutions nationwide.
+              India’s first smartphone-guided biometric ridge diagnostic and
+              cognitive analytics engine. Guiding students, families, and
+              institutions nationwide.
             </p>
-
             {/* Quick Action CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
@@ -110,9 +124,41 @@ export const Hero: React.FC<HeroProps> = () => {
                 <span>Success Stories</span>
               </a>
             </div>
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch a message from our founder"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:bg-emerald-50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 sm:w-auto sm:justify-start"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 transition-colors duration-300 group-hover:bg-emerald-100">
+                  <Film className="h-4 w-4 text-emerald-600" />
+                </span>
 
+                <span>A Message from Our Founder</span>
+
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-emerald-600" />
+              </a>
+
+              <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita%20Spark_23%20sep.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch stories of impact"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-indigo-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-indigo-50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto sm:justify-start"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 transition-colors duration-300 group-hover:bg-indigo-100">
+                  <Film className="h-4 w-4 text-indigo-600" />
+                </span>
+
+                <span>Stories of Impact</span>
+
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+              </a>
+            </div>
             {/* National Governance & Global Partners Trust Strip */}
-            <div className="pt-5 border-t border-slate-200/80">
+            {/* <div className="pt-5 border-t border-slate-200/80">
               <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2.5">
                 Featured at National Summits & Partnered with
               </p>
@@ -132,14 +178,12 @@ export const Hero: React.FC<HeroProps> = () => {
                   <span>The SPARK Collective</span>
                 </span>
               </div>
-            </div>
-
+            </div> */}
           </div>
 
           {/* Right Column: Hero Image (Replacing Live Ground Data Section) */}
           <div className="lg:col-span-6">
             <div className="relative group">
-              
               {/* Outer decorative ambient glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-[#161248]/20 via-[#4338CA]/20 to-cyan-500/20 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity" />
 
@@ -156,11 +200,11 @@ export const Hero: React.FC<HeroProps> = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-black/30 pointer-events-none" />
 
                 {/* Top Location / Event Pill */}
-                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                {/* <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
                   <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20 shadow-xs">
                     National Leadership Summit · New Delhi
                   </span>
-                </div>
+                </div> */}
 
                 {/* Top Right Quick Upload / Replace Button */}
                 {/* <div className="absolute top-3.5 right-3.5 z-20">
@@ -184,18 +228,15 @@ export const Hero: React.FC<HeroProps> = () => {
                     DAKSH & The SPARK Collective National Summit
                   </h3>
                   <p className="text-[11px] sm:text-xs text-slate-300 font-normal line-clamp-1">
-                    Powering leading public and educational institutions with Gates Foundation & CII.
+                    Powering leading public and educational institutions with
+                    Gates Foundation & CII.
                   </p>
                 </div>
-
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
   );
 };

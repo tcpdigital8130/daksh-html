@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
-import { 
-  Menu, Bell, Crown, Sparkles, MessageSquare, Bot, 
-  Activity, Brain, Home, Calendar, Camera, FileText, User, 
-  Check, Star, ChevronDown, CheckCircle2 
-} from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Menu,
+  Bell,
+  Crown,
+  Sparkles,
+  MessageSquare,
+  Bot,
+  Activity,
+  Brain,
+  Home,
+  Calendar,
+  Camera,
+  FileText,
+  User,
+  Check,
+  Star,
+  ChevronDown,
+  CheckCircle2,
+} from "lucide-react";
 
 export const MobileAppSection: React.FC = () => {
   return (
-    <section id="app" className="py-16 md:py-24 bg-white border-t border-slate-200 relative overflow-hidden">
+    <section
+      id="app"
+      className="py-16 md:py-24 bg-white border-t border-slate-200 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
           {/* Left Column: Copy & App Highlights */}
           <div className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2 text-xs font-bold text-[#4338CA] tracking-wider uppercase">
               <span>Mobile App Architecture</span>
-              <span aria-hidden="true" className="text-slate-300">·</span>
+              <span aria-hidden="true" className="text-slate-300">
+                ·
+              </span>
               <span>Available for Android</span>
             </div>
 
@@ -24,22 +42,39 @@ export const MobileAppSection: React.FC = () => {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-              From family profile switching and Vayo AI counseling to high-precision biometric scanning, the DAKSH mobile app gives parents and students immediate guidance anytime.
+              From family profile switching and Vayo AI counseling to
+              high-precision pattern scanning, the DAKSH mobile app gives
+              everyone an immediate guidance anytime.
             </p>
 
             {/* Feature List */}
             <div className="space-y-3 pt-2">
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span><strong className="text-slate-900">Family Profile Central:</strong> Seamlessly switch between Aarav (Class 8), Ananya (Class 11), and parents under a single account.</span>
+                <span>
+                  <strong className="text-slate-900">
+                    Family Profile Central:
+                  </strong>{" "}
+                  Seamlessly switch between all family members; children to
+                  parents under a single account.
+                </span>
               </div>
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span><strong className="text-slate-900">Vayo AI Counselor:</strong> Instant real-time advice grounded in your DISC, personality, and SWOT diagnostic matrices.</span>
+                <span>
+                  <strong className="text-slate-900">Vayo AI Counselor:</strong>{" "}
+                  Instant real-time advice grounded in your DISC, personality,
+                  and SWOT diagnostic matrices.
+                </span>
               </div>
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span><strong className="text-slate-900">One-Tap Camera Ridge Scanner:</strong> Guided macro scanning for instant biometric pattern capture.</span>
+                <span>
+                  <strong className="text-slate-900">
+                    One-Tap Camera Ridge Scanner:
+                  </strong>{" "}
+                  Guided macro scanning for instant pattern capture.
+                </span>
               </div>
             </div>
 
@@ -55,8 +90,12 @@ export const MobileAppSection: React.FC = () => {
                   ▶
                 </div>
                 <div>
-                  <span className="text-[10px] text-indigo-200 block uppercase tracking-wider font-semibold">Download on</span>
-                  <span className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Google Play Store</span>
+                  <span className="text-[10px] text-indigo-200 block uppercase tracking-wider font-semibold">
+                    Download on
+                  </span>
+                  <span className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    Google Play Store
+                  </span>
                 </div>
               </a>
 
@@ -66,19 +105,16 @@ export const MobileAppSection: React.FC = () => {
                 {/* <span>(15,000+ Reviews)</span> */}
               </div>
             </div>
-
           </div>
 
           {/* Right Column: High-Fidelity Exact Mobile Screenshot Mockup */}
           <div className="lg:col-span-6 flex justify-center">
             <div className="w-[330px] sm:w-[350px] rounded-[48px] bg-slate-900 p-2.5 shadow-2xl border-[6px] border-slate-800 relative text-slate-900">
-              
               {/* Phone Speaker Notch */}
               <div className="w-28 h-4 bg-slate-950 rounded-full mx-auto mb-1.5" />
 
               {/* Screen Body */}
               <div className="rounded-[40px] bg-[#F4F7FB] p-3.5 space-y-3 overflow-hidden text-xs border border-slate-200">
-                
                 {/* 1. Status Bar */}
                 <div className="flex items-center justify-between text-[11px] font-bold text-slate-700 px-1 pt-0.5">
                   <span>11:42</span>
@@ -99,9 +135,13 @@ export const MobileAppSection: React.FC = () => {
                       <span className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center text-xs">
                         👦
                       </span>
-                      <span className="font-bold text-slate-900 text-xs">Aarav</span>
+                      <span className="font-bold text-slate-900 text-xs">
+                        Aarav
+                      </span>
                       <ChevronDown className="w-3 h-3 text-slate-400" />
-                      <span className="text-[10px] text-slate-500 ml-0.5">Class 8</span>
+                      <span className="text-[10px] text-slate-500 ml-0.5">
+                        Class 8
+                      </span>
                     </div>
                   </div>
 
@@ -119,8 +159,12 @@ export const MobileAppSection: React.FC = () => {
                 {/* 3. Switch Profile / Manage Family */}
                 <div className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xs space-y-2">
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="font-bold text-slate-900">Switch Profile</span>
-                    <span className="font-bold text-[#4338CA]">Manage Family</span>
+                    <span className="font-bold text-slate-900">
+                      Switch Profile
+                    </span>
+                    <span className="font-bold text-[#4338CA]">
+                      Manage Family
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
@@ -134,7 +178,9 @@ export const MobileAppSection: React.FC = () => {
                           <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
                       </div>
-                      <span className="text-[11px] font-bold text-[#4338CA]">Aarav</span>
+                      <span className="text-[11px] font-bold text-[#4338CA]">
+                        Aarav
+                      </span>
                       <span className="text-[9px] text-slate-400">Class 8</span>
                     </div>
 
@@ -143,8 +189,12 @@ export const MobileAppSection: React.FC = () => {
                       <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
                         👧
                       </div>
-                      <span className="text-[11px] font-semibold text-slate-700">Ananya</span>
-                      <span className="text-[9px] text-slate-400">Class 11</span>
+                      <span className="text-[11px] font-semibold text-slate-700">
+                        Ananya
+                      </span>
+                      <span className="text-[9px] text-slate-400">
+                        Class 11
+                      </span>
                     </div>
 
                     {/* Rahul */}
@@ -152,7 +202,9 @@ export const MobileAppSection: React.FC = () => {
                       <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
                         👨
                       </div>
-                      <span className="text-[11px] font-semibold text-slate-700">Rahul</span>
+                      <span className="text-[11px] font-semibold text-slate-700">
+                        Rahul
+                      </span>
                       <span className="text-[9px] text-slate-400">Father</span>
                     </div>
 
@@ -161,7 +213,9 @@ export const MobileAppSection: React.FC = () => {
                       <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
                         👩
                       </div>
-                      <span className="text-[11px] font-semibold text-slate-700">Priya</span>
+                      <span className="text-[11px] font-semibold text-slate-700">
+                        Priya
+                      </span>
                       <span className="text-[9px] text-slate-400">Mother</span>
                     </div>
                   </div>
@@ -181,7 +235,9 @@ export const MobileAppSection: React.FC = () => {
                         <span>👋</span>
                       </h4>
                       <p className="text-[10px] text-indigo-100/90 leading-tight">
-                        I'm <strong className="text-cyan-300">Vayo</strong>. I've analyzed your DISC, Personality and SWOT profile. Ask me anything, I'm here to guide your best future.
+                        I'm <strong className="text-cyan-300">Vayo</strong>.
+                        I've analyzed your DISC, Personality and SWOT profile.
+                        Ask me anything, I'm here to guide your best future.
                       </p>
                     </div>
 
@@ -242,8 +298,12 @@ export const MobileAppSection: React.FC = () => {
                 {/* 5. Multiple Intelligence Matrices */}
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="font-bold text-slate-900">Multiple Intelligence Matrices</span>
-                    <span className="font-bold text-[#4338CA]">View All 8 →</span>
+                    <span className="font-bold text-slate-900">
+                      Multiple Intelligence Matrices
+                    </span>
+                    <span className="font-bold text-[#4338CA]">
+                      View All 8 →
+                    </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
@@ -252,8 +312,12 @@ export const MobileAppSection: React.FC = () => {
                         <Activity className="w-4 h-4" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-slate-900 leading-tight">8 Intelligences</p>
-                        <p className="text-[9px] text-slate-500 mt-0.5">Bodily 85% · Linguistic 80%</p>
+                        <p className="text-[10px] font-bold text-slate-900 leading-tight">
+                          8 Intelligences
+                        </p>
+                        <p className="text-[9px] text-slate-500 mt-0.5">
+                          Bodily 85% · Linguistic 80%
+                        </p>
                       </div>
                     </div>
 
@@ -262,8 +326,12 @@ export const MobileAppSection: React.FC = () => {
                         <Brain className="w-4 h-4" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-slate-900 leading-tight">Brain Dominance</p>
-                        <p className="text-[9px] text-slate-500 mt-0.5">Left 52% | Right 48%</p>
+                        <p className="text-[10px] font-bold text-slate-900 leading-tight">
+                          Brain Dominance
+                        </p>
+                        <p className="text-[9px] text-slate-500 mt-0.5">
+                          Left 52% | Right 48%
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -315,14 +383,11 @@ export const MobileAppSection: React.FC = () => {
                   <span>◯</span>
                   <span>〈</span>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
   );
 };
-

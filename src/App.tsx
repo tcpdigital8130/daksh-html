@@ -9,13 +9,12 @@ import { NationalPartners } from "./components/NationalPartners";
 import { SuccessStories } from "./components/SuccessStories";
 import { FAQSection } from "./components/FAQSection";
 import { Footer } from "./components/Footer";
-
 import StudentValidationForm from "./components/StudentValidationForm";
+import FAQSections from "./components/FAQSections";
 
 function HomePage() {
   return (
     <div className="min-h-screen bg-[#F4F7FB] text-slate-900 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
-
       <Navbar />
 
       <main className="flex-1">
@@ -29,11 +28,12 @@ function HomePage() {
 
         <SuccessStories />
 
-        <FAQSection />
+        {/* <FAQSection /> */}
+
+        <FAQSections />
       </main>
 
       <Footer />
-
     </div>
   );
 }
@@ -42,19 +42,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         {/* Existing Website */}
-        <Route
-          path="/"
-          element={<HomePage />}
-        />
+        <Route path="/" element={<HomePage />} />
 
         {/* Student Validation Form */}
-        <Route
-          path="/form"
-          element={<StudentValidationForm />}
-        />
-
+        <Route path="/form" element={<StudentValidationForm />} />
       </Routes>
     </BrowserRouter>
   );
