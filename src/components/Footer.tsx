@@ -62,12 +62,12 @@ export const Footer: React.FC = () => {
           MAIN CONTAINER
       ===================================================== */}
 
-      <div className="relative mx-auto w-full max-w-[1488px] px-5 sm:px-8 lg:px-0">
+      <div className="relative mx-auto w-full max-w-[1488px] px-5 sm:px-8 lg:px-5">
         {/* ===================================================
             TOP FOOTER CONTENT
         =================================================== */}
 
-        <div className="grid grid-cols-1 items-start gap-10 py-12 sm:grid-cols-2 sm:gap-12 md:grid-cols-12 md:gap-x-10 md:gap-y-10 lg:py-14 lg:gap-x-16">
+        <div className="grid grid-cols-1 items-start gap-10 py-12 sm:grid-cols-2 sm:gap-12 md:grid-cols-12 md:gap-x-10 md:gap-y-10 lg:py-14 lg:gap-x-16 ml-15">
           {/* =================================================
               BRAND COLUMN
           ================================================= */}
@@ -83,13 +83,13 @@ export const Footer: React.FC = () => {
               <img
                 src="/gallery/logo-wht.png"
                 alt="DAKSH Logo"
-                className="h-[76px] w-auto object-contain sm:h-[82px]"
+                className="h-27.5 w-auto object-contain sm:h-30.5"
               />
             </a>
 
             {/* DESCRIPTION */}
 
-            <p className="mt-5 max-w-[590px] text-sm leading-7 text-indigo-200/75">
+            <p className="mt-1 max-w-[590px] text-sm leading-7 text-indigo-200/75 ml-10">
               Empowering India&apos;s youth, families, and institutions through
               smartphone biometric diagnostics and empirical cognitive
               analytics.

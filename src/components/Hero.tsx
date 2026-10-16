@@ -122,10 +122,11 @@ export const Hero: React.FC<HeroProps> = () => {
               >
                 <MessageSquareHeart className="w-4 h-4 text-emerald-600" />
                 <span>Success Stories</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
               </a>
             </div>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a
+              {/* <a
                 href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -139,9 +140,18 @@ export const Hero: React.FC<HeroProps> = () => {
                 <span>A Message from Our Founder</span>
 
                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-emerald-600" />
-              </a>
+              </a> */}
 
               <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
+              >
+                <Film className="w-4 h-4 text-cyan-600" />
+                <span>A Message from Our Founder</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+              </a>
+
+              {/* <a
                 href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita%20Spark_23%20sep.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -154,6 +164,15 @@ export const Hero: React.FC<HeroProps> = () => {
 
                 <span>Stories of Impact</span>
 
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+              </a> */}
+
+              <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
+              >
+                <Film className="w-4 h-4 text-indigo-600" />
+                <span>Stories of Impact</span>
                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
               </a>
             </div>
