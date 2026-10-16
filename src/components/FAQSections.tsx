@@ -60,7 +60,7 @@ export default function FAQSections() {
       {/* Background decoration */}
       <div className="pointer-events-none absolute left-1/2 top-24 h-64 w-64 -translate-x-1/2 rounded-full bg-indigo-100/40 blur-3xl" />
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-7xl">
         {/* Section heading */}
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-indigo-700">
@@ -68,12 +68,12 @@ export default function FAQSections() {
             FAQs — Individuals
           </span>
 
-          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-            Everything you need to know about{" "}
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-4xl">
+            Everything you need to know about <br />
             <span className="text-indigo-700">DAKSH</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-xs leading-7 text-slate-600 sm:text-base">
             Find answers to common questions about DAKSH assessments, personal
             insights and discovering your potential.
           </p>
@@ -87,7 +87,7 @@ export default function FAQSections() {
             return (
               <div
                 key={faq.question}
-                className={`group overflow-hidden rounded-xl border bg-white transition-all duration-300 ${
+                className={`group overflow-hidden rounded-3xl border bg-white transition-all duration-300 ${
                   isOpen
                     ? "border-indigo-200 shadow-[0_8px_30px_rgba(79,70,229,0.07)]"
                     : "border-slate-200 hover:border-indigo-200 hover:shadow-sm"
