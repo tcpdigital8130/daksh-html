@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = () => {
           {/* Left Column: Bold, Punchy, Minimal Text */}
           <div className="lg:col-span-6 space-y-5">
             {/* National Initiative Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
+            {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
               <span className="text-xs font-bold text-slate-900">
                 National Initiative
@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <span className="text-xs font-bold text-[#4338CA]">
                 शक्ति की दिशा (Shakti ki Disha)
               </span>
-            </div>
+            </div> */}
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15] [text-wrap:balance]">
               Decode Innate Potential. <br className="hidden sm:block" />
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = () => {
             </h1>
             {/* Punchy 1-Sentence Subtitle */}
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
-              India’s first smartphone-guided biometric ridge diagnostic and
+              India's first smartphone-guided ridge diagnostic and
               cognitive analytics engine. Guiding students, families, and
               institutions nationwide.
             </p>

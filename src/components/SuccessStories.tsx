@@ -318,7 +318,7 @@ export const SuccessStories: React.FC = () => {
               VIDEO STORIES
           ================================================= */}
 
-          {/* <div className="mb-14">
+          <div className="mb-14">
             <div className="flex items-center gap-2 mb-5">
               <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-[#4338CA]">
                 <Play className="w-4 h-4" />
@@ -411,7 +411,7 @@ export const SuccessStories: React.FC = () => {
                 </article>
               ))}
             </div>
-          </div> */}
+          </div>
 
           {/* =================================================
               WRITTEN STORIES

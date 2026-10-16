@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
               href="#partners"
               className="px-3 py-1.5 text-xs font-bold text-slate-700 hover:text-[#4338CA] hover:bg-white rounded-xl transition-all"
             >
-              Partners
+              Our Community
             </a>
 
             <a

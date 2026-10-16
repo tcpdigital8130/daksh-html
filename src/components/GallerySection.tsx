@@ -176,7 +176,7 @@ export const GallerySection: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-[11px] font-bold text-[#4338CA] tracking-wider uppercase mb-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>National Impact · शक्ति की दिशा</span>
+              <span>Impact Gallery</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
               Real Summits. Real Scans. Real Impact.
