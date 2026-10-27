@@ -281,9 +281,9 @@ export const GallerySection: React.FC = () => {
 
                   {/* Top Badges */}
                   <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-black/50 text-white backdrop-blur-xs border border-white/10">
+                    {/* <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-black/50 text-white backdrop-blur-xs border border-white/10">
                       {item.categoryLabel}
-                    </span>
+                    </span> */}
                     {hasCustomPhoto && (
                       <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-md bg-emerald-500 text-white">
                         Custom
@@ -317,8 +317,8 @@ export const GallerySection: React.FC = () => {
                   </h3>
                   <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
                     <span className="flex items-center gap-1 truncate text-slate-500">
-                      <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
-                      <span className="truncate">{item.location}</span>
+                      {/* <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
+                      <span className="truncate">{item.location}</span> */}
                     </span>
                     <span className="shrink-0 text-[10px] font-medium text-slate-400">
                       {item.date}
