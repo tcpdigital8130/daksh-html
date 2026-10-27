@@ -312,7 +312,7 @@ export const GallerySection: React.FC = () => {
 
                 {/* Compact Content: Title & Location only (NO description, NO tags) */}
                 <div className="p-3 flex-1 flex flex-col justify-between">
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#4338CA] transition-colors leading-snug line-clamp-1">
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#4338CA] transition-colors leading-snug">
                     {item.title}
                   </h3>
                   <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">

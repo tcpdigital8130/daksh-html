@@ -247,9 +247,8 @@ export const Hero: React.FC<HeroProps> = () => {
                     DAKSH at The Spark Collective Camp
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs text-slate-300 font-normal line-clamp-1">
-                    Spark Collective and Daksh inspiring women to discover their
-                    inner potential and lead with confidence.
+                  <p className="text-[11px] sm:text-xs text-slate-300 font-normal">
+                    Smt Smriti Irani and Daksh founder Smt. Namrata Agarwal inspiring women to discover their inner potential and lead with confidence.
                   </p>
                 </div>
               </div>
