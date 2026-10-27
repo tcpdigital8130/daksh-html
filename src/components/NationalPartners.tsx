@@ -19,10 +19,10 @@ export const NationalPartners: React.FC<NationalPartnersProps> = ({ onOpenCounse
             <span>National Scale</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-            Trusted by Premier Public Enterprises & Consortia.
+            Trusted Across Government, Public & Private Sectors
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed font-normal">
-            DAKSH powers large-scale human capital benchmarking for central government enterprises, industry federations, and nationwide educational consortia.
+            From Government enterpises to industry organaization and educational institutions, DAKSH enables structured assessment, profiling, and insights at scale
           </p>
         </div>
 
@@ -47,10 +47,10 @@ export const NationalPartners: React.FC<NationalPartnersProps> = ({ onOpenCounse
                 <p className="text-xs text-slate-500">{partner.category}</p>
               </div>
 
-              <div className="pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 flex items-center gap-2">
+              {/* <div className="pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#4338CA]" />
                 <span>{partner.impact}</span>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = () => {
           {/* Left Column: Bold, Punchy, Minimal Text */}
           <div className="lg:col-span-6 space-y-5">
             {/* National Initiative Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
+            {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
               <span className="text-xs font-bold text-slate-900">
                 National Initiative
@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <span className="text-xs font-bold text-[#4338CA]">
                 शक्ति की दिशा (Shakti ki Disha)
               </span>
-            </div>
+            </div> */}
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15] [text-wrap:balance]">
               Decode Innate Potential. <br className="hidden sm:block" />
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = () => {
             </h1>
             {/* Punchy 1-Sentence Subtitle */}
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
-              India’s first smartphone-guided biometric ridge diagnostic and
+              India's first smartphone-guided ridge diagnostic and
               cognitive analytics engine. Guiding students, families, and
               institutions nationwide.
             </p>
@@ -122,10 +122,11 @@ export const Hero: React.FC<HeroProps> = () => {
               >
                 <MessageSquareHeart className="w-4 h-4 text-emerald-600" />
                 <span>Success Stories</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
               </a>
             </div>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a
+              {/* <a
                 href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -139,9 +140,18 @@ export const Hero: React.FC<HeroProps> = () => {
                 <span>A Message from Our Founder</span>
 
                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-emerald-600" />
-              </a>
+              </a> */}
 
               <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
+              >
+                <Film className="w-4 h-4 text-cyan-600" />
+                <span>A Message from Our Founder</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+              </a>
+
+              {/* <a
                 href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita%20Spark_23%20sep.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -154,6 +164,15 @@ export const Hero: React.FC<HeroProps> = () => {
 
                 <span>Stories of Impact</span>
 
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+              </a> */}
+
+              <a
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
+              >
+                <Film className="w-4 h-4 text-indigo-600" />
+                <span>Stories of Impact</span>
                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
               </a>
             </div>
@@ -228,9 +247,8 @@ export const Hero: React.FC<HeroProps> = () => {
                     DAKSH at The Spark Collective Camp
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs text-slate-300 font-normal line-clamp-1">
-                    Spark Collective and Daksh inspiring women to discover their
-                    inner potential and lead with confidence.
+                  <p className="text-[11px] sm:text-xs text-slate-300 font-normal">
+                    Smt Smriti Irani and Daksh founder Smt. Namrata Agarwal inspiring women to discover their inner potential and lead with confidence.
                   </p>
                 </div>
               </div>

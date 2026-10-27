@@ -17,6 +17,7 @@ import {
   Star,
   ChevronDown,
   CheckCircle2,
+  Play,
 } from "lucide-react";
 
 export const MobileAppSection: React.FC = () => {
@@ -44,7 +45,7 @@ export const MobileAppSection: React.FC = () => {
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
               From family profile switching and Vayo AI counseling to
               high-precision pattern scanning, the DAKSH mobile app gives
-              everyone an immediate guidance anytime.
+              everyone immediate guidance anytime.
             </p>
 
             {/* Feature List */}
@@ -87,7 +88,7 @@ export const MobileAppSection: React.FC = () => {
                 className="px-5 py-3 rounded-2xl bg-[#161248] hover:bg-[#2A2B78] text-white flex items-center gap-3 transition-all group cursor-pointer shadow-sm shadow-indigo-950/20"
               >
                 <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-cyan-300 font-bold text-xs">
-                  ▶
+                  <Play />
                 </div>
                 <div>
                   <span className="text-[10px] text-indigo-200 block uppercase tracking-wider font-semibold">
@@ -101,7 +102,7 @@ export const MobileAppSection: React.FC = () => {
 
               <div className="flex items-center gap-2 text-xs text-slate-600 px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200">
                 <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                <span className="font-bold text-slate-900">4.9 / 5.0</span>
+                <span className="font-bold text-slate-900">4.2 / 5.0</span>
                 {/* <span>(15,000+ Reviews)</span> */}
               </div>
             </div>
