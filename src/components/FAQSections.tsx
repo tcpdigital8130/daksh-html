@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Who can take a DAKSH assessment?",
     answer:
-      "DAKSH is for adults at every stage — working professionals, entrepreneurs, homemakers, job seekers, career changers and those exploring their next step.",
+      "Daksh is for everyone — students, parents, working professionals, entrepreneurs, homemakers, job seekers, career changers and those exploring their next step.",
   },
   {
     question: "Why should I take a DAKSH assessment?",
@@ -65,7 +65,7 @@ export default function FAQSections() {
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-indigo-700">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-600" />
-            FAQs — Individuals
+            FAQs
           </span>
 
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-4xl">
