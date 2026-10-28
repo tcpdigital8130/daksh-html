@@ -144,6 +144,8 @@ export const Hero: React.FC<HeroProps> = () => {
 
               <a
                 href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
               >
                 <Film className="w-4 h-4 text-cyan-600" />
@@ -168,7 +170,9 @@ export const Hero: React.FC<HeroProps> = () => {
               </a> */}
 
               <a
-                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616413516-NAMRATA%20AGARWAL%20SPARK_23%20sep.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita Spark_23 sep.mp4"
                 className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
               >
                 <Film className="w-4 h-4 text-indigo-600" />
