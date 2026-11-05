@@ -54,9 +54,10 @@ export default function FAQSections() {
 
   return (
     <section
-      id="faqs"
+      id="faq"
       className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
+      <span id="faqs" className="sr-only" />
       {/* Background decoration */}
       <div className="pointer-events-none absolute left-1/2 top-24 h-64 w-64 -translate-x-1/2 rounded-full bg-indigo-100/40 blur-3xl" />
 

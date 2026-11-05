@@ -77,6 +77,10 @@ export const Footer: React.FC = () => {
 
             <a
               href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
               aria-label="DAKSH Home"
               className="inline-flex items-center"
             >
@@ -128,7 +132,7 @@ export const Footer: React.FC = () => {
             </ul>
             {/* PRIVACY / COMPLIANCE */}
 
-            <div className="mt-6 flex w-full max-w-[575px] items-start gap-3 rounded-xl border border-indigo-700/50 bg-indigo-950/40 px-4 py-3.5">
+            <div id="privacy" className="mt-6 flex w-full max-w-[575px] items-start gap-3 rounded-xl border border-indigo-700/50 bg-indigo-950/40 px-4 py-3.5">
               {/* ICON */}
 
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-400/10">
@@ -154,6 +158,7 @@ export const Footer: React.FC = () => {
             {/* CONTACT */}
 
             <a
+              id="contact"
               href="mailto:info@daksh.com"
               className="mt-6 inline-flex items-center gap-2.5 text-xs font-semibold text-indigo-200/70 transition-colors duration-200 hover:text-cyan-300"
             >
@@ -211,7 +216,7 @@ export const Footer: React.FC = () => {
 
             <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[10px] text-indigo-300/45 sm:justify-start sm:text-[11px]">
               <a
-                href="#"
+                href="#privacy"
                 className="transition-colors duration-200 hover:text-indigo-100"
               >
                 Privacy Policy
@@ -220,7 +225,7 @@ export const Footer: React.FC = () => {
               <span className="text-indigo-800">•</span>
 
               <a
-                href="#"
+                href="#privacy"
                 className="transition-colors duration-200 hover:text-indigo-100"
               >
                 Terms &amp; Conditions
