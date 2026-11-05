@@ -155,7 +155,6 @@ export const FAQSection: React.FC = () => {
   return (
     <>
       <section
-        id="faq"
         className="py-16 md:py-24 bg-white border-t border-slate-200 relative overflow-hidden"
       >
         {/* Subtle background glow */}
@@ -199,22 +198,20 @@ export const FAQSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveCategory("all")}
-                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all ${
-                  activeCategory === "all"
+                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all ${activeCategory === "all"
                     ? "bg-white text-slate-900 shadow-xs"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 All Questions ({FAQS.length})
               </button>
               <button
                 type="button"
                 onClick={() => setActiveCategory("parents")}
-                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${
-                  activeCategory === "parents"
+                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${activeCategory === "parents"
                     ? "bg-white text-slate-900 shadow-xs"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 <Users className="w-3.5 h-3.5 text-amber-500" />
                 <span>For Parents</span>
@@ -222,11 +219,10 @@ export const FAQSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveCategory("students")}
-                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${
-                  activeCategory === "students"
+                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${activeCategory === "students"
                     ? "bg-white text-slate-900 shadow-xs"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 <GraduationCap className="w-3.5 h-3.5 text-indigo-500" />
                 <span>For Students</span>
@@ -234,11 +230,10 @@ export const FAQSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveCategory("science")}
-                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${
-                  activeCategory === "science"
+                className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${activeCategory === "science"
                     ? "bg-white text-slate-900 shadow-xs"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 <Fingerprint className="w-3.5 h-3.5 text-cyan-500" />
                 <span>Science & Privacy</span>
@@ -302,11 +297,10 @@ export const FAQSection: React.FC = () => {
                 return (
                   <div
                     key={faq.id}
-                    className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
-                      isOpen
+                    className={`border rounded-2xl transition-all duration-200 overflow-hidden ${isOpen
                         ? "bg-[#F8FAFD] border-indigo-200/90 shadow-xs"
                         : "bg-white border-slate-200 hover:border-slate-300"
-                    }`}
+                      }`}
                   >
                     <button
                       type="button"
@@ -326,11 +320,10 @@ export const FAQSection: React.FC = () => {
                       </div>
 
                       <div
-                        className={`mt-0.5 shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-transform duration-200 ${
-                          isOpen
+                        className={`mt-0.5 shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-transform duration-200 ${isOpen
                             ? "bg-indigo-600 text-white rotate-180 shadow-xs"
                             : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"
-                        }`}
+                          }`}
                       >
                         <ChevronDown className="w-4 h-4" />
                       </div>

@@ -21,7 +21,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "I worked in HR for many years, but I felt a lack of inner fulfillment compared to things I loved doing like cooking. When my brother introduced me to DAKSH, it revealed that I could excel in business. Taking that step gave me the courage to leave my job, start my own venture from home — “The Rasa Kitchen” — and find true happiness. I am deeply thankful to DAKSH!",
     author: "Neha Thapar",
     role: "Home Chef",
-    category: "user",
+    category: "student",
     location: "",
     outcome: "Started her own home-based venture, The Rasa Kitchen",
     avatarBg: "bg-indigo-600 text-white",
@@ -33,7 +33,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "As a practicing Company Secretary, I was present at the Spark Boot Camp and tried the DAKSH app. The behavioral insights and process-oriented traits it highlighted were an exact match to my actual experience and nature. It's amazingly precise and insightful!",
     author: "Ritu Mahajan",
     role: "Practicing Company Secretary",
-    category: "user",
+    category: "parent",
     location: "",
     outcome: "Found DAKSH's behavioral insights aligned with her experience",
     avatarBg: "bg-purple-600 text-white",
@@ -45,7 +45,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "As a retired government officer from Meghalaya, I wondered what next after retirement. When I came across the DAKSH aptitude test, the results were both insightful and reassuring — highlighting my deep-rooted love for plants and gardening. It gave me the courage to follow my passion and start my own little herb nursery in my backyard. Taking this test was truly one of my best post-retirement decisions!",
     author: "Hazel Richmond Pyrtuh",
     role: "Retired Government Officer, Government of Meghalaya",
-    category: "user",
+    category: "parent",
     location: "Meghalaya",
     outcome: "Started a backyard herb nursery after retirement",
     avatarBg: "bg-emerald-600 text-white",
@@ -57,7 +57,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "Running a diamond and gold jewelry business as a single parent came with its responsibilities, but getting my assessment report through the DAKSH App at the Spark Collective camp was an eye-opener. It felt like looking into a mirror and truly sparked my inner drive. No work is ever too small or big — you just need to look within and find your true identity. I highly recommend every woman to take this step!",
     author: "Anjali Matharu",
     role: "Diamond & Gold Jewelry Business Owner",
-    category: "user",
+    category: "parent",
     location: "",
     outcome: "Gained self-awareness and motivation through the DAKSH assessment",
     avatarBg: "bg-rose-600 text-white",
@@ -69,7 +69,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "I attended a boot camp organized through Spark and discovered the DAKSH app. Within 10-15 minutes, using just my fingerprints, the app gave me an incredibly accurate report about my personality, behavior, and hidden potential. It felt amazing to see how precisely it understood me without asking anything. I'm going to use these insights to enhance my business, and I strongly recommend everyone to download and try DAKSH!",
     author: "Rekha Verma",
     role: "Entrepreneur",
-    category: "user",
+    category: "student",
     location: "",
     outcome: "Plans to use DAKSH insights to enhance her business",
     avatarBg: "bg-amber-600 text-white",
@@ -81,7 +81,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "I visited the Spark boot camp and tried the fingerprint scanning app. I was truly amazed to see how accurate the report was — about 80% of what it revealed about me was spot-on and completely true. Coming to this camp and trying out the app has been a wonderful experience!",
     author: "Pooja Sharma",
     role: "Homemaker",
-    category: "user",
+    category: "parent",
     location: "",
     outcome: "Reported a positive experience with the DAKSH assessment",
     avatarBg: "bg-cyan-600 text-white",
@@ -93,7 +93,7 @@ const WRITTEN_STORIES: WrittenStory[] = [
       "As a numerologist and graphologist, I test many things, but DAKSH really blew me away. By reading my fingerprints, it generated a report that was 100% accurate. It left me wondering how it could know so much about me with such precision! It's an amazing experience, and I strongly recommend everyone to try it and learn more about themselves.",
     author: "Suddha Babbar",
     role: "Numerologist and Graphologist",
-    category: "user",
+    category: "student",
     location: "",
     outcome: "Shared a positive assessment experience and recommends DAKSH",
     avatarBg: "bg-violet-600 text-white",
@@ -111,10 +111,8 @@ export const SuccessStories: React.FC = () => {
       return WRITTEN_STORIES;
     }
 
-    // The Word document contains general user testimonials, not parent/student stories.
-    // Keep those testimonials visible in the existing filters without changing the UI.
     return WRITTEN_STORIES.filter(
-      (story) => story.category === activeTab || story.category === "user"
+      (story) => story.category === activeTab
     );
   }, [activeTab]);
 

@@ -17,7 +17,7 @@ interface HeroProps {
 const HERO_IMAGE_FILENAME = "WhatsApp Image 2026-10-01 at 12.05.58.jpeg";
 
 export const Hero: React.FC<HeroProps> = () => {
-  const [heroImageSrc, setHeroImageSrc] = useState<string>("/gallery/D1.png");
+  const [heroImageSrc, setHeroImageSrc] = useState<string>("/gallery/D1.jpeg");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -172,7 +172,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita Spark_23 sep.mp4"
+                href="https://media-daksh.sfo3.digitaloceanspaces.com/media/1791616058908-Nandita%20Spark_23%20sep.mp4"
                 className="px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-xs flex items-center gap-2"
               >
                 <Film className="w-4 h-4 text-indigo-600" />

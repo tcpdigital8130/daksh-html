@@ -20,7 +20,54 @@ import {
   Play,
 } from "lucide-react";
 
+const PROFILES = [
+  {
+    id: "aarav",
+    name: "Aarav",
+    role: "Class 8",
+    emoji: "👦",
+    bodily: "85%",
+    linguistic: "80%",
+    left: 52,
+    right: 48,
+  },
+  {
+    id: "ananya",
+    name: "Ananya",
+    role: "Class 11",
+    emoji: "👧",
+    bodily: "72%",
+    linguistic: "91%",
+    left: 44,
+    right: 56,
+  },
+  {
+    id: "rahul",
+    name: "Rahul",
+    role: "Father",
+    emoji: "👨",
+    bodily: "68%",
+    linguistic: "88%",
+    left: 61,
+    right: 39,
+  },
+  {
+    id: "priya",
+    name: "Priya",
+    role: "Mother",
+    emoji: "👩",
+    bodily: "79%",
+    linguistic: "84%",
+    left: 49,
+    right: 51,
+  },
+];
+
 export const MobileAppSection: React.FC = () => {
+  const [activeProfileId, setActiveProfileId] = useState("aarav");
+  const activeProfile =
+    PROFILES.find((p) => p.id === activeProfileId) || PROFILES[0];
+  const [activeBottomNav, setActiveBottomNav] = useState("home");
   return (
     <section
       id="app"
@@ -134,14 +181,14 @@ export const MobileAppSection: React.FC = () => {
                     {/* Active profile badge */}
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-slate-200 shadow-xs">
                       <span className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center text-xs">
-                        👦
+                        {activeProfile.emoji}
                       </span>
                       <span className="font-bold text-slate-900 text-xs">
-                        Aarav
+                        {activeProfile.name}
                       </span>
                       <ChevronDown className="w-3 h-3 text-slate-400" />
                       <span className="text-[10px] text-slate-500 ml-0.5">
-                        Class 8
+                        {activeProfile.role}
                       </span>
                     </div>
                   </div>
@@ -163,62 +210,55 @@ export const MobileAppSection: React.FC = () => {
                     <span className="font-bold text-slate-900">
                       Switch Profile
                     </span>
-                    <span className="font-bold text-[#4338CA]">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-[#4338CA] hover:underline cursor-pointer"
+                    >
                       Manage Family
-                    </span>
+                    </a>
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
-                    {/* Aarav Active */}
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="relative">
-                        <div className="w-11 h-11 rounded-full bg-amber-100 border-2 border-[#4338CA] flex items-center justify-center text-lg shadow-xs">
-                          👦
-                        </div>
-                        <div className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#4338CA] text-white flex items-center justify-center">
-                          <Check className="w-2.5 h-2.5 stroke-[3]" />
-                        </div>
-                      </div>
-                      <span className="text-[11px] font-bold text-[#4338CA]">
-                        Aarav
-                      </span>
-                      <span className="text-[9px] text-slate-400">Class 8</span>
-                    </div>
-
-                    {/* Ananya */}
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
-                        👧
-                      </div>
-                      <span className="text-[11px] font-semibold text-slate-700">
-                        Ananya
-                      </span>
-                      <span className="text-[9px] text-slate-400">
-                        Class 11
-                      </span>
-                    </div>
-
-                    {/* Rahul */}
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
-                        👨
-                      </div>
-                      <span className="text-[11px] font-semibold text-slate-700">
-                        Rahul
-                      </span>
-                      <span className="text-[9px] text-slate-400">Father</span>
-                    </div>
-
-                    {/* Priya */}
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-lg">
-                        👩
-                      </div>
-                      <span className="text-[11px] font-semibold text-slate-700">
-                        Priya
-                      </span>
-                      <span className="text-[9px] text-slate-400">Mother</span>
-                    </div>
+                    {PROFILES.map((p) => {
+                      const isActive = p.id === activeProfileId;
+                      return (
+                        <button
+                          key={p.id}
+                          type="button"
+                          onClick={() => setActiveProfileId(p.id)}
+                          className="flex flex-col items-center gap-0.5 cursor-pointer"
+                        >
+                          <div className="relative">
+                            <div
+                              className={`w-11 h-11 rounded-full flex items-center justify-center text-lg ${
+                                isActive
+                                  ? "bg-amber-100 border-2 border-[#4338CA] shadow-xs"
+                                  : "bg-slate-100"
+                              }`}
+                            >
+                              {p.emoji}
+                            </div>
+                            {isActive && (
+                              <div className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#4338CA] text-white flex items-center justify-center">
+                                <Check className="w-2.5 h-2.5 stroke-[3]" />
+                              </div>
+                            )}
+                          </div>
+                          <span
+                            className={`text-[11px] ${
+                              isActive
+                                ? "font-bold text-[#4338CA]"
+                                : "font-semibold text-slate-700"
+                            }`}
+                          >
+                            {p.name}
+                          </span>
+                          <span className="text-[9px] text-slate-400">{p.role}</span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -232,7 +272,7 @@ export const MobileAppSection: React.FC = () => {
                   <div className="grid grid-cols-12 gap-2 items-center">
                     <div className="col-span-8 space-y-1">
                       <h4 className="text-base font-extrabold flex items-center gap-1.5">
-                        <span>Hi Aarav!</span>
+                        <span>Hi {activeProfile.name}!</span>
                         <span>👋</span>
                       </h4>
                       <p className="text-[10px] text-indigo-100/90 leading-tight">
@@ -258,30 +298,55 @@ export const MobileAppSection: React.FC = () => {
 
                   {/* Chips */}
                   <div className="grid grid-cols-2 gap-1.5">
-                    <div className="px-2 py-1.5 rounded-lg bg-white/10 text-[10px] font-semibold flex items-center gap-1">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
+                    >
                       <span>🎯</span>
                       <span className="truncate">Best Career</span>
-                    </div>
-                    <div className="px-2 py-1.5 rounded-lg bg-white/10 text-[10px] font-semibold flex items-center gap-1">
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
+                    >
                       <span>⭐</span>
                       <span className="truncate">My Strengths</span>
-                    </div>
-                    <div className="px-2 py-1.5 rounded-lg bg-white/10 text-[10px] font-semibold flex items-center gap-1">
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
+                    >
                       <span>📈</span>
                       <span className="truncate">How can I improve?</span>
-                    </div>
-                    <div className="px-2 py-1.5 rounded-lg bg-white/10 text-[10px] font-semibold flex items-center gap-1">
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
+                    >
                       <span>📋</span>
                       <span className="truncate">Create Growth Plan</span>
-                    </div>
+                    </a>
                   </div>
 
                   {/* Chat CTA row */}
                   <div className="flex items-center justify-between pt-1">
-                    <button className="px-3 py-1.5 rounded-xl bg-white text-[#161248] font-bold text-[10px] flex items-center gap-1 shadow-xs">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3 py-1.5 rounded-xl bg-white text-[#161248] font-bold text-[10px] flex items-center gap-1 shadow-xs cursor-pointer hover:bg-slate-50 transition-colors"
+                    >
                       <MessageSquare className="w-3 h-3 text-[#4338CA]" />
                       <span>Chat with Vayo</span>
-                    </button>
+                    </a>
 
                     <div className="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 text-[9px] font-bold flex items-center gap-1 border border-cyan-400/30">
                       <Bot className="w-2.5 h-2.5 text-cyan-300" />
@@ -302,9 +367,14 @@ export const MobileAppSection: React.FC = () => {
                     <span className="font-bold text-slate-900">
                       Multiple Intelligence Matrices
                     </span>
-                    <span className="font-bold text-[#4338CA]">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-[#4338CA] hover:underline cursor-pointer"
+                    >
                       View All 8 →
-                    </span>
+                    </a>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
@@ -317,7 +387,7 @@ export const MobileAppSection: React.FC = () => {
                           8 Intelligences
                         </p>
                         <p className="text-[9px] text-slate-500 mt-0.5">
-                          Bodily 85% · Linguistic 80%
+                          Bodily {activeProfile.bodily} · Linguistic {activeProfile.linguistic}
                         </p>
                       </div>
                     </div>
@@ -331,7 +401,7 @@ export const MobileAppSection: React.FC = () => {
                           Brain Dominance
                         </p>
                         <p className="text-[9px] text-slate-500 mt-0.5">
-                          Left 52% | Right 48%
+                          Left {activeProfile.left}% | Right {activeProfile.right}%
                         </p>
                       </div>
                     </div>
@@ -341,41 +411,71 @@ export const MobileAppSection: React.FC = () => {
                 {/* 6. Bottom Navigation Bar with Center Floating Scan Button */}
                 <div className="relative pt-2">
                   <div className="bg-white rounded-2xl p-2 border border-slate-200 shadow-sm flex items-center justify-between px-3 text-[10px] text-slate-500 font-semibold">
-                    <div className="flex flex-col items-center text-[#4338CA]">
+                    <button
+                      type="button"
+                      onClick={() => setActiveBottomNav("home")}
+                      className={`flex flex-col items-center cursor-pointer ${
+                        activeBottomNav === "home" ? "text-[#4338CA]" : "text-slate-500"
+                      }`}
+                    >
                       <Home className="w-4 h-4" />
                       <span className="text-[9px] mt-0.5">Home</span>
-                    </div>
+                    </button>
 
-                    <div className="flex flex-col items-center relative">
+                    <button
+                      type="button"
+                      onClick={() => setActiveBottomNav("assessment")}
+                      className={`flex flex-col items-center relative cursor-pointer ${
+                        activeBottomNav === "assessment" ? "text-[#4338CA]" : "text-slate-500"
+                      }`}
+                    >
                       <Calendar className="w-4 h-4" />
                       <span className="w-1.5 h-1.5 rounded-full bg-[#4338CA] absolute top-0 right-1" />
                       <span className="text-[9px] mt-0.5">Assessment</span>
-                    </div>
+                    </button>
 
                     {/* Placeholder space for floating center scan button */}
                     <div className="w-10" />
 
-                    <div className="flex flex-col items-center">
+                    <button
+                      type="button"
+                      onClick={() => setActiveBottomNav("report")}
+                      className={`flex flex-col items-center cursor-pointer ${
+                        activeBottomNav === "report" ? "text-[#4338CA]" : "text-slate-500"
+                      }`}
+                    >
                       <FileText className="w-4 h-4" />
                       <span className="text-[9px] mt-0.5">Report</span>
-                    </div>
+                    </button>
 
-                    <div className="flex flex-col items-center">
+                    <button
+                      type="button"
+                      onClick={() => setActiveBottomNav("profile")}
+                      className={`flex flex-col items-center cursor-pointer ${
+                        activeBottomNav === "profile" ? "text-[#4338CA]" : "text-slate-500"
+                      }`}
+                    >
                       <User className="w-4 h-4" />
                       <span className="text-[9px] mt-0.5">Profile</span>
-                    </div>
+                    </button>
                   </div>
 
                   {/* The Floating Center Camera Scan Button */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-400 via-sky-500 to-[#4338CA] flex items-center justify-center text-white shadow-md shadow-sky-500/40">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.daksh.daksh"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+                    title="Scan via DAKSH App"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-400 via-sky-500 to-[#4338CA] flex items-center justify-center text-white shadow-md shadow-sky-500/40 group-hover:scale-105 transition-transform">
                       <Camera className="w-5 h-5" />
                     </div>
                     <span className="text-[9px] font-bold text-[#4338CA] mt-0.5 flex items-center gap-0.5">
                       <span>scan</span>
                       <span className="w-1 h-1 rounded-full bg-[#4338CA]" />
                     </span>
-                  </div>
+                  </a>
                 </div>
 
                 {/* Android Navigation Keys */}

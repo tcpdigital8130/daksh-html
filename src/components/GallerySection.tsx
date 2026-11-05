@@ -354,36 +354,16 @@ export const GallerySection: React.FC = () => {
                 <span className="text-slate-500">{selectedItem.date}</span>
               </div>
               
-              {/* <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5">
                 <button
-                  onClick={(e) => handleSingleCardUpload(selectedItem, e)}
-                  className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
-                  title="Upload your photo"
-                >
-                  <Camera className="w-3.5 h-3.5 text-[#4338CA]" />
-                  <span>Replace Photo</span>
-                </button>
-                {storedImages[selectedItem.filename] && (
-                  <button
-                    onClick={async () => {
-                      await removeImageFromStore(selectedItem.filename);
-                      setUploadNotification('Reverted to default photo.');
-                      setTimeout(() => setUploadNotification(null), 3000);
-                    }}
-                    className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
-                    title="Revert photo"
-                  >
-                    <RotateCcw className="w-3.5 h-3.5" />
-                  </button>
-                )}
-                <button
+                  type="button"
                   onClick={() => setSelectedItem(null)}
                   className="p-1 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
                   aria-label="Close modal"
                 >
                   <X className="w-4 h-4" />
                 </button>
-              </div> */}
+              </div>
             </div>
 
             {/* Modal Content */}
